@@ -11,7 +11,7 @@ public class SqlSessionManaver {
 
 	static {
 		try {
-			String resource = "com/smhrd/database/mybatis-config.xml";
+			String resource = "site/inthebus/database/mybatis-config.xml";
 			InputStream inputStream = Resources.getResourceAsStream(resource);
 			sqlSessionFactory = new SqlSessionFactoryBuilder().build(inputStream);
 		} catch (Exception e) {
