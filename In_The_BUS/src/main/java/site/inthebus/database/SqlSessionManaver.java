@@ -8,10 +8,10 @@ import org.apache.ibatis.session.SqlSessionFactoryBuilder;
 
 public class SqlSessionManaver {
 	static SqlSessionFactory sqlSessionFactory;
-
+	
 	static {
 		try {
-			String resource = "com/smhrd/database/mybatis-config.xml";
+			String resource = "site/inthebus/database/mybatis-config.xml";
 			InputStream inputStream = Resources.getResourceAsStream(resource);
 			sqlSessionFactory = new SqlSessionFactoryBuilder().build(inputStream);
 		} catch (Exception e) {
@@ -20,7 +20,7 @@ public class SqlSessionManaver {
 	}
 
 	public static SqlSessionFactory getSqlSession() {
-
+		
 		return sqlSessionFactory;
 	}
 
