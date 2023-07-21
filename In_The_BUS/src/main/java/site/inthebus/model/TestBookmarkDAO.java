@@ -3,11 +3,11 @@ package site.inthebus.model;
 import org.apache.ibatis.session.SqlSession;
 import org.apache.ibatis.session.SqlSessionFactory;
 
-import site.inthebus.database.SqlSessionManaver;
+import site.inthebus.database.SqlSessionManager;
 
 public class TestBookmarkDAO {
 	
-	private static SqlSessionFactory sqlSessionFactory = SqlSessionManaver.getSqlSession();
+	private static SqlSessionFactory sqlSessionFactory = SqlSessionManager.getSqlSession();
 	
 	public int insertBookmark(TestBookmarkDTO dto) {
 		
