@@ -5,6 +5,9 @@
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
+<script src="https://code.jquery.com/jquery-3.7.0.min.js"
+	integrity="sha256-2Pmvv0kuTBOenSvLm6bvfBSSHrUJ+3A7x6P5Ebd07/g="
+	crossorigin="anonymous"></script>
 </head>
 <body>
 
@@ -12,9 +15,16 @@
 		<input type="text" id="busNo">
 		<button onclick="searchBusLaneAJAX();">click</button>
 	</div>
-	<div id="resultDiv">
-		<!-- 결과창 -->
-	</div>
+
+	<button onclick="showRouteList()">click</button>
+	<table id="showRouteList" border=1>
+		<tr>
+			<td>번호</td>
+			<td>arsID</td>
+			<td>StationID</td>
+			<td>정류장명</td>
+		</tr>
+	</table>
 
 
 	<script>
@@ -45,6 +55,27 @@
 					};
 				}
 			};
+		}
+
+		function showRouteList() {
+			for (var i = 0; i < busInfo.station.length; i++) {
+				var busNo = busInfo.busNo;
+				var busID = busInfo.busLocalBlID;
+				var arsID = busInfo.station[i].arsID;
+				var localStationID = busInfo.station[i].localStationID;
+				var stationName = busInfo.station[i].stationName;
+
+				$("#showRouteList").append("<tr> </tr>");
+				$("tr").last().append(
+						"<a href='./InsideBUS.jsp?arsID=" + arsID
+								+ "&localStationID=" + localStationID
+								+ "&stationName=" + stationName + "&busID="
+								+ busID + "&busNo=" + busNo + "'><td>"
+								+ (i + 1) + "</td></a>");
+				$("tr").last().append("<td>" + arsID + "</td>");
+				$("tr").last().append("<td>" + localStationID + "</td>");
+				$("tr").last().append("<td>" + stationName + "</td>");
+			}
 		}
 	</script>
 

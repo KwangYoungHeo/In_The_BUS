@@ -5,31 +5,7 @@
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
-<style type="text/css">
-#one {
-	width: 100px;
-	height: 100px;
-	background-color: red;
-}
 
-#two {
-	width: 100px;
-	height: 100px;
-	background-color: blue;
-}
-
-#three {
-	width: 100px;
-	height: 100px;
-	background-color: green;
-}
-
-#four {
-	width: 100px;
-	height: 100px;
-	background-color: gray;
-}
-</style>
 <script src="https://code.jquery.com/jquery-3.7.0.min.js"
 	integrity="sha256-2Pmvv0kuTBOenSvLm6bvfBSSHrUJ+3A7x6P5Ebd07/g="
 	crossorigin="anonymous"></script>
@@ -39,21 +15,17 @@
 <script>
 	Kakao.init('cc74d2eaa158f56dc0ca061964ab3cdb');
 </script>
+
 </head>
 <body>
-
-	<div id="one"></div>
-	<div id="two"></div>
-	<div id="three"></div>
-	<div id="four"></div>
 	<a id="kakao-login-btn" href="javascript:kakaoLogin()"> <img
 		src="https://k.kakaocdn.net/14/dn/btroDszwNrM/I6efHub1SN5KCJqLm1Ovx1/o.jpg"
 		width="222" alt="카카오 로그인 버튼" />
 	</a>
 	<button id="btn">회원가입</button>
-
-
-
+	
+	<button onclick="location.href='BusNameSearch.jsp'">버스검색</button>
+	<button onclick="location.href='../TestJoinCon'">길찾기</button>
 
 	<script src="https://developers.kakao.com/sdk/js/kakao.js"></script>
 	<script>
