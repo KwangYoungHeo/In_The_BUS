@@ -25,7 +25,7 @@
 	<button id="btn">회원가입</button>
 	
 	<button onclick="location.href='BusNameSearch.jsp'">버스검색</button>
-	<button onclick="location.href='../TestJoinCon'">길찾기</button>
+	<button onclick="location.href='KeywordSearch.jsp'">길찾기</button>
 
 	<script src="https://developers.kakao.com/sdk/js/kakao.js"></script>
 	<script>
@@ -43,13 +43,10 @@
                         success: res => {
                             kakao_account = res.kakao_account;
                             console.log(kakao_account); // 로그인한 회원 정보
-                            
                         }
                     });
                 }
-
             });
-
         }
         
         

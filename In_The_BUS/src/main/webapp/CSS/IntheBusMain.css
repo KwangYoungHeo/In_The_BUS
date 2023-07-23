@@ -178,7 +178,7 @@ h1#title {
 div#trigger {
 	position: absolute;
 	top: 0;
-	bottom: 0;
+	right:37.5%;
 	width: 300px;
 	height: 30%;
 	background-color: white;
