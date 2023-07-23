@@ -23,9 +23,12 @@
 		width="222" alt="카카오 로그인 버튼" />
 	</a>
 	<button id="btn">회원가입</button>
+<<<<<<< HEAD
 	
 	<button onclick="location.href='BusNameSearch.jsp'">버스검색</button>
 	<button onclick="location.href='KeywordSearch.jsp'">길찾기</button>
+=======
+>>>>>>> branch 'main' of https://github.com/2023-SMHRD-SW-DataDesign-1/RTM.git
 
 	<script src="https://developers.kakao.com/sdk/js/kakao.js"></script>
 	<script>

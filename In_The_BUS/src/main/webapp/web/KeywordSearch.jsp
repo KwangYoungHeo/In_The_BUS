@@ -77,9 +77,7 @@
             function placesSearchCB(data, status, pagination) {
                 if (status === kakao.maps.services.Status.OK) {
 
-                    console.log(data); // 키워드 검색 결과가 담긴 변수
-                    console.log(data[0].x); // 경도
-                    console.log(data[0].y); // 위도
+                    // console.log(data); 키워드 검색 결과가 담긴 변수
 
                     start_place_x = data[0].x;
                     start_place_y = data[0].y;
@@ -92,6 +90,10 @@
                         displayMarker(data[i]);
                         bounds.extend(new kakao.maps.LatLng(data[i].y, data[i].x));
                     }
+					bounds.ha = Number(start_place_x);
+					bounds.oa = Number(start_place_x);
+					bounds.pa = Number(start_place_y);
+					bounds.qa = Number(start_place_y);
 
                     // 검색된 장소 위치를 기준으로 지도 범위를 재설정합니다
                     map.setBounds(bounds);
@@ -124,12 +126,7 @@
             // 키워드 검색 완료 시 호출되는 콜백함수 입니다
             function placesSearchCB(data, status, pagination) {
                 if (status === kakao.maps.services.Status.OK) {
-
-                    console.log(data); // 키워드 검색 결과가 담긴 변수
-                    console.log(data[0].x); // 경도
-                    console.log(data[0].y); // 위도
-
-
+                	
                     end_place_x = data[0].x;
                     end_place_y = data[0].y;
 
@@ -141,7 +138,12 @@
                         displayMarker(data[i]);
                         bounds.extend(new kakao.maps.LatLng(data[i].y, data[i].x));
                     }
-
+					
+					bounds.ha = Number(end_place_x);
+					bounds.oa = Number(end_place_x);
+					bounds.pa = Number(end_place_y);
+					bounds.qa = Number(end_place_y);
+					
                     // 검색된 장소 위치를 기준으로 지도 범위를 재설정합니다
                     map.setBounds(bounds);
                 }
