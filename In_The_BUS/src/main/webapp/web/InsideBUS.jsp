@@ -119,7 +119,7 @@ div#info {
 				qs[i] = qs[i].split('=');
 				result[qs[i][0]] = decodeURIComponent(qs[i][1]);
 			}
-			console.log(result);
+			
 			if(result.start != null) {				
 				// 길찾기를 통해 들어온 경우				
 				busId = result.busId;
@@ -181,11 +181,9 @@ div#info {
 			xhr.onreadystatechange = function() {
 				if (this.readyState == 4 && this.status == 200) {
 					stationInfo = JSON.parse(this.responseText);
-					console.log(stationInfo);
-					console.log(stationInfo.response.body.items.item[0].arrtime);
 					
 					var arrTime = 0;
-					console.log(busId);
+					
 					for(var x of stationInfo.response.body.items.item) {
 						if(x.routeid == busId){
 							arrTime = x.arrtime;
@@ -213,7 +211,6 @@ div#info {
 			xhr2.onreadystatechange = function () {
 			    if (this.readyState == 4) {
 			    	stationInfo_busSearch = JSON.parse(this.responseText);
-			    	console.log(stationInfo_busSearch);
 					
 					var arrTime = 0;
 					console.log(busSearchId);
