@@ -37,7 +37,7 @@ div#head {
 	width: 500px; /* 가로 400px */
 	height: 100%; /* 세로 100% */
 	/* border: 10px solid white; */
-	box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+	box-shadow: 0 0 0 rgba(0, 0, 0, 0.1);
 	/* padding: 16px; */
 	/* display: flex; */
 	flex-wrap: wrap;

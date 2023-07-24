@@ -6,4 +6,12 @@
 	<insert id="insertBookmark" parameterType="TestBookmarkDTO">
 		insert into bus_bookmark values(#{id},#{bus_id},#{station_id},#{bus_name})
 	</insert>
+	
+	<select id="duplicationCheck" parameterType="TestBookmarkDTO" resultType="TestBookmarkDTO">
+		select * from bus_bookmark where id=#{id} and bus_id=#{bus_id} and station_id = #{station_id}
+	</select>
+	
+	<delete id="deleteBookmark" parameterType="TestBookmarkDTO">
+		delete from bus_bookmark where id=#{id} and bus_id=#{bus_id} and station_id = #{station_id}
+	</delete>
 </mapper>

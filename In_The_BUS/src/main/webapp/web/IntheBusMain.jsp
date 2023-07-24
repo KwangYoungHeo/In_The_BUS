@@ -5,25 +5,32 @@
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
+
+<link rel="stylesheet" href="../CSS/Main.css">
+
 <script src="https://code.jquery.com/jquery-3.7.0.min.js"
 	integrity="sha256-2Pmvv0kuTBOenSvLm6bvfBSSHrUJ+3A7x6P5Ebd07/g="
 	crossorigin="anonymous"></script>
-<link rel="stylesheet" href="../CSS/Main.css">
+
+<script src="https://t1.kakaocdn.net/kakao_js_sdk/2.3.0/kakao.min.js"
+	integrity="sha384-70k0rrouSYPWJt7q9rSTKpiTfX6USlMYjZUtr1Du+9o4cGvhPAWxngdtVZDdErlh"
+	crossorigin="anonymous"></script>
+<script>
+	Kakao.init('cc74d2eaa158f56dc0ca061964ab3cdb');
+</script>
+<script src="https://developers.kakao.com/sdk/js/kakao.js"></script>
 </head>
 <body>
 	<div id="head">
 		<div id="loghead">
 			<a href="./IntheBusMain.jsp"> <img src="../img/로고.png" alt="" id="log"></a>
 			<div id="title">
+				<br>
 				<h1 id="title" onclick="location.reload()">In The Bus</h1>
 			</div>
 			<div id="menu-trigger">
-<<<<<<< HEAD
 				<span class="menu"></span> 
 				<span class="menu"></span> 
-=======
-				<span class="menu"></span> <span class="menu"></span> 
->>>>>>> branch 'main' of https://github.com/2023-SMHRD-SW-DataDesign-1/RTM.git
 				<span class="menu"></span>
 			</div>
 
@@ -31,7 +38,7 @@
 		
 		<div id="trigger" hidden>
 			<div id="user">
-				<h1 id="profile" onclick="">로그인 해주세요</h1>
+				<h1 id="profile" onclick="location.href='LoginTest.jsp'">로그인 해주세요</h1>
 				<hr>
 			</div>
 			<div id="favorites">

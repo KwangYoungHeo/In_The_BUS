@@ -17,5 +17,23 @@ public class TestBookmarkDAO {
 		
 		return row;		
 	}
+	
+	public TestBookmarkDTO duplicationCheck(TestBookmarkDTO dto) {
+		
+		SqlSession session = sqlSessionFactory.openSession(true);
+		TestBookmarkDTO result = session.selectOne("duplicationCheck", dto);
+		session.close();
+		
+		return result;
+		
+	}
+	
+	public int deleteBookmark(TestBookmarkDTO dto) {
+		SqlSession session = sqlSessionFactory.openSession(true);
+		int row = session.delete("deleteBookmark", dto);
+		session.close();
+		
+		return row;
+	}
 
 }
