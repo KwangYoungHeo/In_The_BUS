@@ -1,14 +1,11 @@
 @charset "UTF-8";
-#start_info {
-
-	width: auto;
-	height: auto;
-}
-
-#info_startSearch{
-	display: block;	
-	text-align: center;
-}
+  body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh; /* 세로 100% */
+    margin: 0;
+  }
 
   div#head {
     width: 450px; /* 가로 400px */
