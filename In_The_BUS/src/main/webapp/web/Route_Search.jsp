@@ -6,7 +6,7 @@
 <head>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title> 🚲Bus_Search🚲 </title>
-  <link rel="stylesheet" href="../CSS/Bus_Search.css">
+  <link rel="stylesheet" href="../CSS/Route_Search.css">
 </head>
 <script type="text/javascript">
   function showClock() {
