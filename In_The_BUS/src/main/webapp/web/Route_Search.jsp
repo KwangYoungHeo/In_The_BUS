@@ -28,7 +28,7 @@
     setTimeout(showClock, 1000); //1초마다 갱신
   }
 </script>
-
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous"></script>
 <body onload="showClock()">
   <div id="head">
     <div id="top">
@@ -67,7 +67,7 @@
     <div id="map" style="width:100%;height:83.5%;"></div>
 
     <script type="text/javascript"
-      src="//dapi.kakao.com/v2/maps/sdk.js?appkey=cc74d2eaa158f56dc0ca061964ab3cdb&libraries=services,clusterer,drawing"></script>
+      src="//dapi.kakao.com/v2/maps/sdk.js?appkey=	9142efa60865fec179e97899ff351e55&libraries=services,clusterer,drawing"></script>
     <script src="../JS/Map.js"></script>
     <script>
       function geoFindMe() {
