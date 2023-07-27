@@ -190,7 +190,7 @@ div#trigger {
 }
 
 div#trigger.active {
-	right: 950px;
+	right: 37.5%;
 }
 
 h1#routes {

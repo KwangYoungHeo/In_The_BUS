@@ -1,0 +1,80 @@
+@charset "UTF-8";
+#title {
+    justify-content: center;
+    align-items: center;
+    height: 100%; /* 세로 100% */
+    margin: 0;
+    position: fixed;
+    text-align: -webkit-center;
+    z-index: 1;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh; /* 세로 100% */
+    margin: 0;
+}
+
+div#head {
+    width: 450px; /* 가로 400px */
+    height: 100%; /* 세로 100% */
+    /* border: 1px solid #ccc; */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    /* padding: 50px; */
+
+    position: absolute;
+    top: 147px;
+    /* display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center; */
+
+
+}
+  div#top{
+    /* position: fixed; */
+    /* top: 0; */
+    /* left: 0; */
+    /* padding: 10px; */
+    width: 450px;
+    height: 3%;
+
+    /* justify-content: space-between; */
+    box-shadow: #766666;
+    border: 1px solid #766666;
+    background-color: pink;
+    /* color: white; */
+    text-align: center;
+    position: relative;
+    z-index: 1;
+  }
+  div#information{
+    width: 450px;
+    height: 12%;
+    border: 1px solid black;
+    position: relative;
+    background-color: blue;
+    overflow-y: auto;
+  }
+  div.station{
+    width: 99.8%;
+    /* height: 5%; */
+    border: 1px solid black;
+    margin-top: 9px;
+    
+  }
+  ol li {
+   list-style: none;
+   display: flex;
+  }
+  li#num{
+    font-size: 28px;
+  }
+  ol{
+    display: contents;
+  }
+  li{
+    margin-left: 7px;
+  }

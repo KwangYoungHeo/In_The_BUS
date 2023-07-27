@@ -1,0 +1,64 @@
+@charset "UTF-8";
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh; /* 세로 100% */
+    margin: 0;
+  }
+
+  div#head {
+    width: 450px; /* 가로 400px */
+    height: 100%; /* 세로 100% */
+    /* border: 1px solid #ccc; */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    /* padding: 50px; */
+    /* display: flex; */
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  div#top{
+    width: 100%;
+    height: 7%;
+    display: block;
+    /* justify-content: space-between; */
+    box-shadow: #766666;
+    border: 1px solid #766666;
+    background-color: blue;
+    /* color: white; */
+    text-align: center;
+  }
+  input#Bus{
+    display: block;
+    margin: 0 auto;
+    padding: 10px;
+    box-sizing: border-box;
+    position: absolute;
+    top: 2%;
+    right: 42%;
+    width: 17%;
+  }
+  div#Show{
+    /* text-align: center; */
+    font-size: 25px;
+    border: 1px solid black;
+    height: 7%;
+    margin-top: 10px;
+    width: 100%;
+    /* 가려야해요.. */
+    display: flex;
+    justify-content: center;
+    
+  }
+  input#button{
+    position: absolute;
+    top: 5.5%;
+    right: 42.5%;
+  }
+  div#divClock{
+    width: 100%;
+    border: 1px solid black;
+    color: black;
+  }
