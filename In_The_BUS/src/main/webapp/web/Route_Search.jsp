@@ -38,6 +38,9 @@
       <img src="../img/Reset.png" alt="Reset" id="reset" onclick="">
     </div>
     <div id="divClock"><!-- 현재시간을 표시해줌 --></div>
+    
+    
+    
     <div id="searchShow" hidden>
       <ul>
         <li>
@@ -64,8 +67,8 @@
     <div id="map" style="width:100%;height:83.5%;"></div>
 
     <script type="text/javascript"
-      src="//dapi.kakao.com/v2/maps/sdk.js?appkey=0c67ff1ce3f889417b8b27bdfee0a898&libraries=services,clusterer,drawing"></script>
-    <script src="./JS/Map.js"></script>
+      src="//dapi.kakao.com/v2/maps/sdk.js?appkey=cc74d2eaa158f56dc0ca061964ab3cdb&libraries=services,clusterer,drawing"></script>
+    <script src="../JS/Map.js"></script>
     <script>
       function geoFindMe() {
         const status = document.querySelector("#status");
@@ -75,27 +78,26 @@
         mapLink.textContent = "";
 
         function success(position) {
-          const latitude = position.coords.latitude;
-          const longitude = position.coords.longitude;
+          const latitude = position.coords.latitude; // 위도
+          const longitude = position.coords.longitude; // 경도
 
           status.textContent = "";
           mapLink.href = `https://www.openstreetmap.org/#map=18/${latitude}/${longitude}`;
-          mapLink.textContent = `위도: ${latitude} °, 경도: ${longitude} °`;
         }
 
         function error() {
-          status.textContent = "현재 위치를 가져올 수 없음";
+          alert("현재 위치를 가져올 수 없음");
         }
 
         if (!navigator.geolocation) {
-          status.textContent = "브라우저가 위치 정보를 지원하지 않음";
+          alert("브라우저가 위치 정보를 지원하지 않음");
         } else {
-          status.textContent = "위치 파악 중…";
+          alert("위치 파악 중…");
           navigator.geolocation.getCurrentPosition(success, error);
         }
       }
 
-      document.querySelector("#Starting").addEventListener("click", geoFindMe);
+      // document.querySelector("#Starting").addEventListener("click", geoFindMe);
     </script>
   </div>
 </body>

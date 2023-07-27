@@ -1,95 +1,117 @@
 @charset "UTF-8";
-  body {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh; /* 세로 100% */
-    margin: 0;
-  }
 
-  div#head {
-    width: 450px; /* 가로 400px */
-    height: 100%; /* 세로 100% */
-    /* border: 1px solid #ccc; */
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    /* padding: 50px; */
-    /* display: flex; */
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-  }
-  
-  div#top{
-    width: 100%;
-    height: 13.5%;
-    display: block;
-    /* justify-content: space-between; */
-    box-shadow: #766666;
-    border: 1px solid #766666;
-    background-color: blue;
-    /* color: white; */
-    text-align: center;
-  }
-  input#Starting{
-    display: block;
-    margin: 0 auto;
-    /* height: 5%; */
-    padding: 10px;
-    box-sizing: border-box;
-    position: absolute;
-    top: 2%;
-    right: 42%;
-    width: 17%;
-  }
-  input#Destingation{
-   display: block;
-   margin: 0 auto;
-   /* height: 20%; */
-   padding: 10px;
-   box-sizing: border-box;
-   position: absolute;
-   width: 17%;
-   top: 7%;
-   right: 42%;
-  }
-  img#change{
-    /* transform: rotate(90deg); */
-    display: block;
-    margin: 20px auto;
-    /* width: 20px; */
-    position: absolute;
-    width: 2.5%;
-    right: 39%;
-    top: 0;
-  }
-  img#reset{
-    display: block;
-    margin: 20px auto;  
-    position: absolute;
-    width: 2.5%;
-    right: 39%;
-    top: 5%;
-  }
-  div#divClock{
-    width: 100%;
-    border: 1px solid black;
-    color: black;
-  }
-  div#searchShow{
-    width: 100%;
-    border: 1px solid black;
-  }
-  ul,ol {
-    list-style: none;
-  }
-  .time{
-    font-weight: bold;
-    font-size: 25px;
-  }
-  .setmin{
-    color: red;
-    font-weight: bold;
-  }
-  p#status{
-    display: none;
-  }
+body {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	height: 100vh; /* 세로 100% */
+	margin: 0;
+}
+
+div#head {
+	width: 450px; /* 가로 400px */
+	height: 100%; /* 세로 100% */
+	/* border: 1px solid #ccc; */
+	box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+	/* padding: 50px; */
+	/* display: flex; */
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+}
+
+div#top {
+	width: 100%;
+	height: 13.5%;
+	display: block;
+	/* justify-content: space-between; */
+	box-shadow: #766666;
+	border: 1px solid #766666;
+	background-color: blue;
+	/* color: white; */
+	text-align: center;
+}
+
+input#Starting {
+	display: block;
+	margin: 0 auto;
+	/* height: 5%; */
+	padding: 10px;
+	box-sizing: border-box;
+	position: absolute;
+	top: 2%;
+	right: 42%;
+	width: 17%;
+}
+
+input#Destingation {
+	display: block;
+	margin: 0 auto;
+	/* height: 20%; */
+	padding: 10px;
+	box-sizing: border-box;
+	position: absolute;
+	width: 17%;
+	top: 7%;
+	right: 42%;
+}
+
+img#change {
+	/* transform: rotate(90deg); */
+	display: block;
+	margin: 20px auto;
+	/* width: 20px; */
+	position: absolute;
+	width: 2.5%;
+	right: 39%;
+	top: 0;
+}
+
+img#reset {
+	display: block;
+	margin: 20px auto;
+	position: absolute;
+	width: 2.5%;
+	right: 39%;
+	top: 5%;
+}
+
+div#divClock {
+	width: 100%;
+	border: 1px solid black;
+	color: black;
+}
+
+div#searchShow {
+	width: 100%;
+	border: 1px solid black;
+}
+
+ul, ol {
+	list-style: none;
+}
+
+.time {
+	font-weight: bold;
+	font-size: 25px;
+}
+
+.setmin {
+	color: red;
+	font-weight: bold;
+}
+
+p#status {
+	display: none;
+}
+
+#start_info {
+
+	width: auto;
+	height: auto;
+}
+
+#info_startSearch{
+	display: block;	
+	text-align: center;
+}

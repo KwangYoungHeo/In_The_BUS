@@ -1,25 +1,212 @@
+// 마커를 클릭하면 장소명을 표출할 인포윈도우 입니다
+var infowindow = new kakao.maps.InfoWindow({ zIndex: 1 });
+
 var mapContainer = document.getElementById('map'), // 지도를 표시할 div 
-    mapOption = { 
-        center: new kakao.maps.LatLng(33.450701, 126.570667), // 지도의 중심좌표
-        level: 3 // 지도의 확대 레벨
-    };
+	mapOption = {
+		center: new kakao.maps.LatLng(37.566826, 126.9786567), // 지도의 중심좌표
+		level: 3 // 지도의 확대 레벨
+	};
 
-// 지도를 표시할 div와  지도 옵션으로  지도를 생성합니다
-var map = new kakao.maps.Map(mapContainer, mapOption); 
+// 지도를 생성합니다    
+var map = new kakao.maps.Map(mapContainer, mapOption);
 
-// 주소-좌표 변환 객체를 생성합니다
-var geocoder = new kakao.maps.services.Geocoder();
+// 장소 검색 객체를 생성합니다
+var ps = new kakao.maps.services.Places();
 
-// 주소로 좌표를 검색합니다
-geocoder.addressSearch('광주광역시 동구 예술길 31-15', function(result, status) {
 
-    // 정상적으로 검색이 완료됐으면 
-     if (status === kakao.maps.services.Status.OK) {
-        console.log(geocoder);
 
-        var coords = new kakao.maps.LatLng(result[0].y, result[0].x);
 
-        // 지도의 중심을 결과값으로 받은 위치로 이동시킵니다
-        map.setCenter(coords);
-    } 
-});    
+
+// 키워드 검색 시스템 테스트
+
+let start = document.getElementById('Starting');
+let end = document.getElementById('Destingation');
+
+let btn_start = document.getElementById('start_search');
+let btn_end = document.getElementById('end_search');
+let btn_route = document.getElementById('route_search');
+
+let start_place_x = "";
+let start_place_y = "";
+let end_place_x = "";
+let end_place_y = "";
+
+
+
+let start_place = (e) => {
+	if (e.key === "Enter") {
+
+		let start_place = start.value;
+		// 키워드로 장소를 검색합니다
+		ps.keywordSearch(start_place, placesSearchCB);
+
+		// 키워드 검색 완료 시 호출되는 콜백함수 입니다
+		function placesSearchCB(data, status, pagination) {
+			if (status === kakao.maps.services.Status.OK) {
+
+				// console.log(data); 키워드 검색 결과가 담긴 변수
+
+				start_place_x = data[0].x;
+				start_place_y = data[0].y;
+
+				// 검색된 장소 위치를 기준으로 지도 범위를 재설정하기위해
+				// LatLngBounds 객체에 좌표를 추가합니다
+				var bounds = new kakao.maps.LatLngBounds();
+
+				for (var i = 0; i < data.length; i++) {
+					displayMarker(data[i]);
+					bounds.extend(new kakao.maps.LatLng(data[i].y, data[i].x));
+				}
+				bounds.ha = Number(start_place_x);
+				bounds.oa = Number(start_place_x);
+				bounds.pa = Number(start_place_y);
+				bounds.qa = Number(start_place_y);
+
+				// 검색된 장소 위치를 기준으로 지도 범위를 재설정합니다
+				map.setBounds(bounds);
+			}
+		}
+
+		// 지도에 마커를 표시하는 함수입니다
+		function displayMarker(place) {
+
+			// 마커를 생성하고 지도에 표시합니다
+			var marker = new kakao.maps.Marker({
+				map: map,
+				position: new kakao.maps.LatLng(place.y, place.x)
+			});
+
+			// 마커에 클릭이벤트를 등록합니다
+			kakao.maps.event.addListener(marker, 'click', function() {
+				// 마커를 클릭하면 장소명이 인포윈도우에 표출됩니다
+				infowindow.setContent('<div style="padding:5px;font-size:12px;" id="start_info"> <h1>' + place.place_name +
+					'</h1> <button id="info_startSearch"> 출발 </button></div>');
+				infowindow.open(map, marker);
+			});
+		}
+	}
+}
+
+let end_place = (e) => {
+	if (e.key === "Enter") {
+
+		let end_place = end.value;
+		// 키워드로 장소를 검색합니다
+		ps.keywordSearch(end_place, placesSearchCB);
+
+		// 키워드 검색 완료 시 호출되는 콜백함수 입니다
+		function placesSearchCB(data, status, pagination) {
+			if (status === kakao.maps.services.Status.OK) {
+
+				end_place_x = data[0].x;
+				end_place_y = data[0].y;
+
+				// 검색된 장소 위치를 기준으로 지도 범위를 재설정하기위해
+				// LatLngBounds 객체에 좌표를 추가합니다
+				var bounds = new kakao.maps.LatLngBounds();
+
+				for (var i = 0; i < data.length; i++) {
+					displayMarker(data[i]);
+					bounds.extend(new kakao.maps.LatLng(data[i].y, data[i].x));
+				}
+
+				bounds.ha = Number(end_place_x);
+				bounds.oa = Number(end_place_x);
+				bounds.pa = Number(end_place_y);
+				bounds.qa = Number(end_place_y);
+
+				// 검색된 장소 위치를 기준으로 지도 범위를 재설정합니다
+				map.setBounds(bounds);
+			}
+		}
+
+
+		// 지도에 마커를 표시하는 함수입니다
+		function displayMarker(place) {
+
+			// 마커를 생성하고 지도에 표시합니다
+			var marker = new kakao.maps.Marker({
+				map: map,
+				position: new kakao.maps.LatLng(place.y, place.x)
+			});
+
+			// 마커에 클릭이벤트를 등록합니다
+			kakao.maps.event.addListener(marker, 'click', function() {
+				// 마커를 클릭하면 장소명이 인포윈도우에 표출됩니다
+				infowindow.setContent('<div style="padding:5px;font-size:12px;" id="start_info"> <h1>' + place.place_name + 
+				'</h1> <button id="info_startSearch"> 도착 </button></div>');
+				infowindow.open(map, marker);
+			});
+		}
+	}
+
+}
+
+let resultArr = null;
+let searchRoute = () => {
+	let xhr = new XMLHttpRequest();
+	let url = "https://api.odsay.com/v1/api/searchPubTransPathT?apiKey=bl1n7aNENQxrtjDL46c0hg&lang=0&SX=" + start_place_x + "&SY=" + start_place_y + "&EX=" + end_place_x + "&EY=" + end_place_y + "&OPT=0&SearchType=0&SearchPathType=0";
+	xhr.open("GET", url, true);
+	xhr.send();
+	xhr.onreadystatechange = function() {
+		if (xhr.readyState == 4 && xhr.status == 200) {
+			var resultObj = JSON.parse(xhr.responseText);
+			resultArr = resultObj["result"];
+			console.log(resultArr);
+			console.log(resultArr.path[0].info);
+			console.log("이용하는 버스는 " + resultArr.path[0].subPath[1].lane[0].busNo);
+			showRouteList(resultArr);
+		}
+	}
+
+	//            $.ajax({
+	//            	url : "",
+	//            	
+	//            	dataType : "json",
+	//           	
+	//            	/* 성공 시 */
+	//            	success : function(result){ 
+	//    				if(resultArr==null){
+	//    					alert("resultArr null")
+	//   				}else{
+	//    					alert("resultArr 값 존재")
+	//    					
+	//    				}
+	//    			},
+	//   			
+	//   			/* 실패 시 */
+	//   			error : function(e){
+	//  				alert('실패');
+	//				console.log(e);
+	//      	}
+	//    
+	//       })
+}
+
+
+end.addEventListener("keydown", end_place);
+start.addEventListener("keydown", start_place);
+
+
+btn_route.addEventListener("click", searchRoute);
+
+function showRouteList(resultArr) {
+	for (var i = 0; i < resultArr.path.length; i++) {
+		var bus_start = resultArr.path[i].info.firstStartStation;
+		var bus_end = resultArr.path[i].info.lastEndStation;
+		var busNo = resultArr.path[i].subPath[1].lane[0].busNo;
+		var payment = resultArr.path[i].info.payment;
+		var totalTime = resultArr.path[i].info.totalTime;
+		var busID = resultArr.path[i].subPath[1].lane[0].busLocalBlID;
+		var startStationId = resultArr.path[i].subPath[1].startLocalStationID;
+		// var userID = 
+
+		$("#showRouteList").append("<tr> </tr>");
+		$("tr").last().append("<a href='./BUS_Inside.jsp?start=" + bus_start + "&end=" + bus_end + "&busNo=" + busNo + "&payment=" + payment + "&totalTime=" + totalTime + "&busId=" + busID + "&StationId=" + startStationId + "'><td>" + (i + 1) + "</td></a>");
+		$("tr").last().append("<td>" + bus_start + "</td>");
+		$("tr").last().append("<td>" + bus_end + "</td>");
+		$("tr").last().append("<td>" + busNo + "</td>");
+		$("tr").last().append("<td>" + payment + "</td>");
+		$("tr").last().append("<td>" + totalTime + "</td>");
+	}
+}
