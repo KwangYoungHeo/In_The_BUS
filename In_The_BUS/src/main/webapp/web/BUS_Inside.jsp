@@ -51,17 +51,19 @@
 			<br>
 			<table>
 				<tr>
-					<td>1</td>
+					<td>광주</td>
 				</tr>
 				<tr>
-					<td>2</td>
+					<td>05:40 ~ 22:50</td>
 				</tr>
 				<tr>
-					<td>3</td>
+					<td>배차간격 : 15분</td>
 				</tr>
 			</table>
 		</div>
-
+	<div>
+		<hr>
+	</div>
 		<div id="info">
 			<span id="payment">요금</span>
 			<p id="time">소요시간</p>

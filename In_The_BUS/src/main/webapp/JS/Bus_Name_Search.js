@@ -46,7 +46,7 @@ function searchBusLaneAJAX(e) {
 						// 버스 상세 정보
 						console.log(busInfo);
 						showStation(busInfo);
-
+						
 					}
 				};
 			}
@@ -62,8 +62,11 @@ function showStation(busInfo) {
 		var arsID = busInfo.station[i].arsID;
 		var localStationID = busInfo.station[i].localStationID;
 		var stationName = busInfo.station[i].stationName;
-
-		$('#Show').after("<div class='stationList'>" + stationName + " </div>");
-
+		
+		$('#Show').after("<a href='../web/BUS_Inside.jsp?arsID=" + arsID
+								+ "&localStationID=" + localStationID
+								+ "&stationName=" + stationName + "&busID="
+								+ busID + "&busNo=" + busNo + "' ><div class='stationList'>" + stationName + " </div></a>");
+		
 	}
 };

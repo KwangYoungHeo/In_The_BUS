@@ -22,7 +22,7 @@
 			<!-- 현재시간을 표시해줌 -->
 		</div>
 
-		<div id="Show" class="stationList" hidden>가려져랏</div>
+		<a href="" id="firstShow"><div id="Show" class="stationList" hidden>가려져랏</div></a>
 
 	</div>
 	<script src="../JS/Bus_Name_Search.js"></script>

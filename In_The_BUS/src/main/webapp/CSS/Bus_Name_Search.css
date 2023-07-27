@@ -76,3 +76,15 @@ div#divClock {
 	border: 1px solid black;
 	color: black;
 }
+
+a:link {
+	text-decoration: none;
+}
+
+a:vistied, a:active {
+	color: black;
+}
+
+a {
+	color: black;
+}
