@@ -62,9 +62,6 @@
 			<div id="regional">
 				<h1 id="settings" onclick="">지역설정</h1>
 			</div>
-			<div id="setting">
-				<h1 id="setting" onclick="">설정</h1>
-			</div>
 			<img src="../img/Close.png" alt="" id="close">
 		</div>
 
@@ -97,7 +94,7 @@
 		</div>
 
 		<div class="firstBookmark bookmark" onclick="addBookmark()" hidden>
-			<img alt="닫는중" src="../img/닫는버튼1.png" id="close1" hidden>
+			<img alt="닫는중" src="../img/close.png" id="close1" hidden>
 		</div>
 	</div>
 

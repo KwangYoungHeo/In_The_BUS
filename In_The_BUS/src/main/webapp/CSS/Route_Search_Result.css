@@ -23,7 +23,7 @@ div#head {
     /* border: 1px solid #ccc; */
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     /* padding: 50px; */
-
+	background-color: #ecf0f1;
     position: absolute;
     top: 147px;
     /* display: flex;
@@ -44,7 +44,7 @@ div#head {
     /* justify-content: space-between; */
     box-shadow: #766666;
     border: 1px solid #766666;
-    background-color: pink;
+    background-color: #0fbcf9;
     /* color: white; */
     text-align: center;
     position: relative;

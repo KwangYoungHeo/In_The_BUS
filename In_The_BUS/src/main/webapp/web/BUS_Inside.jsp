@@ -64,9 +64,10 @@
 
 		<div id="info">
 			<span id="payment">요금</span>
-			<p id="time">소요시간</p>
-			<p id="inside">현재혼잡도</p>
+			<p id="inside">현재 혼잡도</p>
 			<p id="arrive">도착정보</p>
+			<p id="Here"> 현재 위치: </p>
+			<p id="time">소요시간</p>
 		</div>
 	</div>
 
