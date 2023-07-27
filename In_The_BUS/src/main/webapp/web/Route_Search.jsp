@@ -32,8 +32,8 @@
 <body onload="showClock()">
   <div id="head">
     <div id="top">
-      <input type="text" id="Starting" value="출발지를 입력해주세요" onclick="">
-      <input type="text" id="Destingation" value="도착지를 입력해주세요" onclick="">
+      <input type="text" id="Starting" Placeholder="출발지를 입력해주세요" onclick="">
+      <input type="text" id="Destingation" Placeholder="도착지를 입력해주세요" onclick="">
       <img src="../img/Swap.png" alt="Swap" id="change" onclick="">
       <img src="../img/Reset.png" alt="Reset" id="reset" onclick="">
     </div>
