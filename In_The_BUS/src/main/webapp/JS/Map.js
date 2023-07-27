@@ -18,23 +18,25 @@ var ps = new kakao.maps.services.Places();
 
 
 // 키워드 검색 시스템 테스트
-
 let start = document.getElementById('Starting');
 let end = document.getElementById('Destingation');
+let searchShow = document.getElementById('searchShow')
+let searchShowPar = document.getElementById('searchShowPar');
+let mapShow = document.getElementById('map');
 
-let btn_start = document.getElementById('start_search');
-let btn_end = document.getElementById('end_search');
-let btn_route = document.getElementById('route_search');
+
+let btn_route = "";
 
 let start_place_x = "";
 let start_place_y = "";
 let end_place_x = "";
 let end_place_y = "";
 
-
-
 let start_place = (e) => {
 	if (e.key === "Enter") {
+
+		searchShowPar.setAttribute('hidden', true);
+		mapShow.removeAttribute('hidden');
 
 		let start_place = start.value;
 		// 키워드로 장소를 검색합니다
@@ -75,6 +77,8 @@ let start_place = (e) => {
 				map: map,
 				position: new kakao.maps.LatLng(place.y, place.x)
 			});
+
+
 
 			// 마커에 클릭이벤트를 등록합니다
 			kakao.maps.event.addListener(marker, 'click', function() {
@@ -133,9 +137,11 @@ let end_place = (e) => {
 			// 마커에 클릭이벤트를 등록합니다
 			kakao.maps.event.addListener(marker, 'click', function() {
 				// 마커를 클릭하면 장소명이 인포윈도우에 표출됩니다
-				infowindow.setContent('<div style="padding:5px;font-size:12px;" id="start_info"> <h1>' + place.place_name + 
-				'</h1> <button id="info_startSearch"> 도착 </button></div>');
+				infowindow.setContent('<div style="padding:5px;font-size:12px;" id="start_info"> <h1>' + place.place_name +
+					'</h1> <button id="info_endSearch"> 도착 </button></div>');
 				infowindow.open(map, marker);
+				btn_route = document.getElementById('info_endSearch');
+				btn_route.addEventListener("click", searchRoute);
 			});
 		}
 	}
@@ -143,6 +149,7 @@ let end_place = (e) => {
 }
 
 let resultArr = null;
+
 let searchRoute = () => {
 	let xhr = new XMLHttpRequest();
 	let url = "https://api.odsay.com/v1/api/searchPubTransPathT?apiKey=bl1n7aNENQxrtjDL46c0hg&lang=0&SX=" + start_place_x + "&SY=" + start_place_y + "&EX=" + end_place_x + "&EY=" + end_place_y + "&OPT=0&SearchType=0&SearchPathType=0";
@@ -158,40 +165,65 @@ let searchRoute = () => {
 			showRouteList(resultArr);
 		}
 	}
-
-	//            $.ajax({
-	//            	url : "",
-	//            	
-	//            	dataType : "json",
-	//           	
-	//            	/* 성공 시 */
-	//            	success : function(result){ 
-	//    				if(resultArr==null){
-	//    					alert("resultArr null")
-	//   				}else{
-	//    					alert("resultArr 값 존재")
-	//    					
-	//    				}
-	//    			},
-	//   			
-	//   			/* 실패 시 */
-	//   			error : function(e){
-	//  				alert('실패');
-	//				console.log(e);
-	//      	}
-	//    
-	//       })
 }
 
+//            $.ajax({
+//            	url : "",
+//            	
+//            	dataType : "json",
+//           	
+//            	/* 성공 시 */
+//            	success : function(result){ 
+//    				if(resultArr==null){
+//    					alert("resultArr null")
+//   				}else{
+//    					alert("resultArr 값 존재")
+//    					
+//    				}
+//    			},
+//   			
+//   			/* 실패 시 */
+//   			error : function(e){
+//  				alert('실패');
+//				console.log(e);
+//      	}
+//    
+//       })
 
-end.addEventListener("keydown", end_place);
+function arvInfo_busSearch(busID, startStationId, count) {
+	let stationInfo_busSearch = "";
+	var xhr = new XMLHttpRequest();
+	var arrTime = 0;
+	var url = 'http://apis.data.go.kr/1613000/ArvlInfoInqireService/getSttnAcctoArvlPrearngeInfoList?serviceKey=GJ2pksSJcZP6XjIAyya2svIBG72hRDlLknjfyt%2B5YtlHMb3OSTGcNw80%2BX3jDaQn0G7uFSnNtPCzRuwubgFy1g%3D%3D'; /*URL*/
+	var queryParams = '&' + encodeURIComponent('pageNo') + '=' + encodeURIComponent('1'); /**/
+	queryParams += '&' + encodeURIComponent('numOfRows') + '=' + encodeURIComponent('10'); /**/
+	queryParams += '&' + encodeURIComponent('_type') + '=' + encodeURIComponent('json'); /**/
+	queryParams += '&' + encodeURIComponent('cityCode') + '=' + encodeURIComponent('24'); /**/
+	queryParams += '&' + encodeURIComponent('nodeId') + '=' + encodeURIComponent(startStationId); /**/
+	queryParams += '&' + encodeURIComponent('routeId') + '=' + encodeURIComponent(busID); /**/
+	xhr.open('GET', url + queryParams);
+	xhr.onreadystatechange = function() {
+		if (this.readyState == 4) {
+			stationInfo_busSearch = JSON.parse(this.responseText);
+			for (var i = 0; i < stationInfo_busSearch.response.body.items.item.length; i++) {
+				if (stationInfo_busSearch.response.body.items.item[i].routeid == busID) {
+					arrTime = stationInfo_busSearch.response.body.items.item[i].arrtime;
+
+
+				}
+			}
+			console.log(stationInfo_busSearch);
+			$('.setmin' + (count + 1)).text(Math.floor(arrTime / 60) + '분 ' + (arrTime % 60) + '초 후 도착');
+		}
+	};
+	xhr.send('');
+}
+
 start.addEventListener("keydown", start_place);
-
-
-btn_route.addEventListener("click", searchRoute);
+end.addEventListener("keydown", end_place);
 
 function showRouteList(resultArr) {
-	for (var i = 0; i < resultArr.path.length; i++) {
+	for (var i = 0, j = 1; i < resultArr.path.length; i++, j++) {
 		var bus_start = resultArr.path[i].info.firstStartStation;
 		var bus_end = resultArr.path[i].info.lastEndStation;
 		var busNo = resultArr.path[i].subPath[1].lane[0].busNo;
@@ -200,13 +232,32 @@ function showRouteList(resultArr) {
 		var busID = resultArr.path[i].subPath[1].lane[0].busLocalBlID;
 		var startStationId = resultArr.path[i].subPath[1].startLocalStationID;
 		// var userID = 
+		// window.location.assign("./BUS_Inside.jsp?start=" + bus_start + "&end=" + bus_end + "&busNo=" + busNo + "&payment=" + payment + "&totalTime=" + totalTime + "&busId=" + busID + "&StationId=" + startStationId);
+		// div 늘어나는 구문 작성
+		$('#searchShow').after("<div class='searchShowChild'> <ul> <li>	<div class='titleclickArea'> <span class='time time" + j + "'>소요시간</span> <br> <span class='payment" + j + "'>요금 </span> <br> </div> <div class='firstVisible'> <div class='subwaystation'> <span class='name" + j + "' data-id='name'>출발 정류장</span><br> <span class='busNo" + j + "'>노선명</span> <span class='setmin setmin" + j + "'> 도착정보 </span><br> <span class='stationName" + j + "'>도착 정정류장</span> <br> </div> </div> </li> </ul> </div>");
+		$('.time' + (i + 1)).text('소요시간 : ' + totalTime + '분');
+		$('.payment' + (i + 1)).text('요금 : ' + payment + '원');
+		$('.name' + (i + 1)).text('출발지 : ' + bus_start);
+		$('.busNo' + (i + 1)).text('ㅣ  ' + busNo + '번');
+		$('.stationName' + (i + 1)).text('도착지 : ' + bus_end);
+		arvInfo_busSearch(busID, startStationId, i);
 
-		$("#showRouteList").append("<tr> </tr>");
-		$("tr").last().append("<a href='./BUS_Inside.jsp?start=" + bus_start + "&end=" + bus_end + "&busNo=" + busNo + "&payment=" + payment + "&totalTime=" + totalTime + "&busId=" + busID + "&StationId=" + startStationId + "'><td>" + (i + 1) + "</td></a>");
-		$("tr").last().append("<td>" + bus_start + "</td>");
-		$("tr").last().append("<td>" + bus_end + "</td>");
-		$("tr").last().append("<td>" + busNo + "</td>");
-		$("tr").last().append("<td>" + payment + "</td>");
-		$("tr").last().append("<td>" + totalTime + "</td>");
 	}
+	searchShowPar.removeAttribute('hidden');
+	mapShow.setAttribute('hidden', true);
+}
+
+
+
+function reset() {
+	$('#Starting').val("");
+	$('#Destingation').val("");
+	searchShowPar.setAttribute('hidden', true);
+	mapShow.removeAttribute('hidden');
+}
+
+function swap() {
+	var change = $('#Starting').val();
+	$('#Starting').val($('#Destingation').val());
+	$('#Destingation').val(change);
 }

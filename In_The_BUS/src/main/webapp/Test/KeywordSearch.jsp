@@ -224,7 +224,7 @@
         		var userID = 
         		
         		$("#showRouteList").append("<tr> </tr>");
-         	 	$("tr").last().append("<a href='./BUS_Inside.jsp?start="+bus_start+"&end="+bus_end+"&busNo="+busNo+"&payment="+payment+"&totalTime="+totalTime+"&busId="+busID+"&StationId="+startStationId+"'><td>"+(i+1)+"</td></a>");
+         	 	$("tr").last().append("<a href='../web/BUS_Inside.jsp?start="+bus_start+"&end="+bus_end+"&busNo="+busNo+"&payment="+payment+"&totalTime="+totalTime+"&busId="+busID+"&StationId="+startStationId+"'><td>"+(i+1)+"</td></a>");
          	 	$("tr").last().append("<td>"+bus_start+"</td>");
          	 	$("tr").last().append("<td>"+bus_end+"</td>");
          	 	$("tr").last().append("<td>"+busNo+"</td>");

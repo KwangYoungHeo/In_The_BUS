@@ -96,7 +96,7 @@ function arvInfo_busSearch() {
 	xhr2.onreadystatechange = function() {
 		if (this.readyState == 4) {
 			stationInfo_busSearch = JSON.parse(this.responseText);
-
+			console.log(stationInfo_busSearch);
 			var arrTime = 0;
 			for (var x of stationInfo_busSearch.response.body.items.item) {
 				if (x.routeid == busID) {

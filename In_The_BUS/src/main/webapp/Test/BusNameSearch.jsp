@@ -67,7 +67,7 @@
 
 				$("#showRouteList").append("<tr> </tr>");
 				$("tr").last().append(
-						"<a href='./BUS_Inside.jsp?arsID=" + arsID
+						"<a href='../web/BUS_Inside.jsp?arsID=" + arsID
 								+ "&localStationID=" + localStationID
 								+ "&stationName=" + stationName + "&busID="
 								+ busID + "&busNo=" + busNo + "'><td>"
