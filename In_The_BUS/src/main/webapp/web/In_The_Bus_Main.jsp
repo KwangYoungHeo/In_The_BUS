@@ -25,7 +25,7 @@
 <body>
 	<div id="head">
 		<div id="loghead">
-			<a href="./IntheBusMain.jsp"> <img src="../img/Logo.png" alt=""
+			<a href="./In_The_Bus_Main.jsp"> <img src="../img/Logo.png" alt=""
 				id="log"></a>
 			<div id="title">
 				<br>
