@@ -83,13 +83,12 @@ div#divClock {
 	color: black;
 }
 
-div.searchShowChild {
+div#searchShow {
 	width: 100%;
-	height: auto;
 	border: 1px solid black;
 }
 
-div#searchShow {
+div.searchShowChild {
 	width: 100%;
 	border: 1px solid black;
 }
@@ -110,4 +109,47 @@ ul, ol {
 
 p#status {
 	display: none;
+}
+
+#start_info {
+	font-size: 12px;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center; /* 수직 중앙 정렬 */
+	height: auto; /* 부모 요소의 높이 설정(예: 뷰포트 높이) */
+}
+
+#start_info>div {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	margin: 0;
+	padding: 0;
+}
+
+#info_startSearch {
+	margin-top: 10px; /* 조정 가능한 여백 값 */
+}
+
+#info_endSearch {
+	margin-top: 10px; /* 조정 가능한 여백 값 */
+}
+
+#NewName {
+	text-align: center;
+	display: inline-block;
+	margin: 0;
+	padding: 0;
+	font-size: 20px;
+}
+
+#buttonContainer {
+	justify-content: center; /* 수평 중앙 정렬 */
+	margin-top: 10px; /* 조정 가능한 여백 값 */
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
 }

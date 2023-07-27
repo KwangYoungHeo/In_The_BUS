@@ -137,8 +137,8 @@ let end_place = (e) => {
 			// 마커에 클릭이벤트를 등록합니다
 			kakao.maps.event.addListener(marker, 'click', function() {
 				// 마커를 클릭하면 장소명이 인포윈도우에 표출됩니다
-				infowindow.setContent('<div style="padding:5px;font-size:12px;" id="start_info"> <h1>' + place.place_name +
-					'</h1> <button id="info_endSearch"> 도착 </button></div>');
+				infowindow.setContent('<div style="font-size:12px;" id="start_info"> <div> <h1 id="NewName">' + place.place_name + 
+				'</h1>  <button type="button" id="info_endSearch"> 도착 </button> </div> </div>');
 				infowindow.open(map, marker);
 				btn_route = document.getElementById('info_endSearch');
 				btn_route.addEventListener("click", searchRoute);

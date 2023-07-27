@@ -94,7 +94,7 @@
 		</div>
 
 		<div class="firstBookmark bookmark" onclick="addBookmark()" hidden>
-			<img alt="닫는중" src="../img/close.png" id="close1" hidden>
+			<img alt="닫는중" src="../img/Close.png" id="close1" hidden>
 		</div>
 	</div>
 

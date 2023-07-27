@@ -3,9 +3,11 @@
 body {
 	display: flex;
 	justify-content: center;
-	align-items: center; height : 100vh; /* 세로 100% */
+	align-items: center;
+	height: 100vh; /* 세로 100% */
 	margin: 0;
 	height: 100vh;
+	background-image: url("../img/Background.jpg");
 }
 
 div#boder {
@@ -37,11 +39,12 @@ div#head {
 	box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 	/* padding: 16px; */
 	/* display: flex; */
-	flex-wrap: wrap;
+	flex-wrap: wrap; flex-direction : column; justify-content : flex-start;
+	align-items : flex-start;
+	background-color: #ecf0f1;
 	flex-direction: column;
 	justify-content: flex-start;
 	align-items: flex-start;
-	background-color: #ecf0f1;
 }
 
 img#log {
@@ -272,4 +275,25 @@ img#close1 {
 	position: absolute;
 	bottom: 47.5%;
 	right: 37.3%;
+}
+/* 로그인 버튼 */
+#Login {
+	/* 배경색과 글자색 지정 */
+	background-color: #3498db;
+	color: #fff;
+	/* 둥근 테두리를 주어 더 이쁜 모양으로 만듭니다. */
+	border-radius: 5px;
+	/* 패딩과 마진을 조절하여 버튼 내용과 주변 여백을 지정합니다. */
+	padding: 10px 20px;
+	margin: 5px;
+	/* 필요에 따라 다른 스타일을 추가적으로 적용할 수 있습니다. */
+	font-size: 16px;
+	font-weight: bold;
+	/* 커서를 올렸을 때 마우스 모양 변경 */
+	cursor: pointer;
+	/* 선택 효과 제거 */
+	outline: none;
+}
+#Login:hover{
+	background-color: #45aaf2;
 }
