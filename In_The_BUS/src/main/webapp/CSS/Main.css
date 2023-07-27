@@ -26,10 +26,7 @@ div#loghead {
 	/* left: auto; */
 	width: 100%;
 	display: inline-flex;
-	justify-content: space-between;
-	box-shadow: #766666;
-	border: 1px solid #766666;
-	background-color: rgb(26, 170, 225);
+	background-color: #0fbcf9;
 	color: white;
 }
 
@@ -44,7 +41,7 @@ div#head {
 	flex-direction: column;
 	justify-content: flex-start;
 	align-items: flex-start;
-	background-color: #e1e1e1;
+	background-color: #ecf0f1;
 }
 
 img#log {

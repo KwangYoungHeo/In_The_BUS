@@ -17,6 +17,7 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    background-color: #ecf0f1;
   }
   
   div#top{
@@ -26,7 +27,7 @@
     /* justify-content: space-between; */
     box-shadow: #766666;
     border: 1px solid #766666;
-    background-color: blue;
+    background-color: #0fbcf9;
     /* color: white; */
     text-align: center;
   }
