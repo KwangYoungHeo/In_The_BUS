@@ -93,7 +93,10 @@ let start_place = (e) => {
 
 let end_place = (e) => {
 	if (e.key === "Enter") {
-
+		
+		searchShowPar.setAttribute('hidden', true);
+		mapShow.removeAttribute('hidden');
+		
 		let end_place = end.value;
 		// 키워드로 장소를 검색합니다
 		ps.keywordSearch(end_place, placesSearchCB);
