@@ -137,8 +137,8 @@ let end_place = (e) => {
 			// 마커에 클릭이벤트를 등록합니다
 			kakao.maps.event.addListener(marker, 'click', function() {
 				// 마커를 클릭하면 장소명이 인포윈도우에 표출됩니다
-				infowindow.setContent('<div style="font-size:12px;" id="start_info"> <div> <h1 id="NewName">' + place.place_name + 
-				'</h1>  <button type="button" id="info_endSearch"> 도착 </button> </div> </div>');
+				infowindow.setContent('<div style="font-size:12px;" id="start_info"> <div> <h1 id="NewName">' + place.place_name +
+					'</h1>  <button type="button" id="info_endSearch"> 도착 </button> </div> </div>');
 				infowindow.open(map, marker);
 				btn_route = document.getElementById('info_endSearch');
 				btn_route.addEventListener("click", searchRoute);
@@ -222,19 +222,31 @@ function arvInfo_busSearch(busID, startStationId, count) {
 start.addEventListener("keydown", start_place);
 end.addEventListener("keydown", end_place);
 
+var bus_start = "";
+var bus_end = "";
+var busNo = "";
+var payment = "";
+var totalTime = "";
+var busID = "";
+var startStationId = "";
+
 function showRouteList(resultArr) {
 	for (var i = 0, j = 1; i < resultArr.path.length; i++, j++) {
-		var bus_start = resultArr.path[i].info.firstStartStation;
-		var bus_end = resultArr.path[i].info.lastEndStation;
-		var busNo = resultArr.path[i].subPath[1].lane[0].busNo;
-		var payment = resultArr.path[i].info.payment;
-		var totalTime = resultArr.path[i].info.totalTime;
-		var busID = resultArr.path[i].subPath[1].lane[0].busLocalBlID;
-		var startStationId = resultArr.path[i].subPath[1].startLocalStationID;
+		bus_start = resultArr.path[i].info.firstStartStation;
+		bus_end = resultArr.path[i].info.lastEndStation;
+		busNo = resultArr.path[i].subPath[1].lane[0].busNo;
+		payment = resultArr.path[i].info.payment;
+		totalTime = resultArr.path[i].info.totalTime;
+		busID = resultArr.path[i].subPath[1].lane[0].busLocalBlID;
+		startStationId = resultArr.path[i].subPath[1].startLocalStationID;
+		if(i == 0) {
+			var url = "../web/BUS_Inside.jsp?start=" + bus_start + "&end=" + bus_end + "&busNo=" + busNo + "&payment=" + payment + "&totalTime=" + totalTime + "&busId=" + busID + "&StationId=" + startStationId
+			$('#firstShow').attr("href", url);			
+		}
 		// var userID = 
 		// window.location.assign("./BUS_Inside.jsp?start=" + bus_start + "&end=" + bus_end + "&busNo=" + busNo + "&payment=" + payment + "&totalTime=" + totalTime + "&busId=" + busID + "&StationId=" + startStationId);
 		// div 늘어나는 구문 작성
-		$('#searchShow').after("<div class='searchShowChild'> <ul> <li>	<div class='titleclickArea'> <span class='time time" + j + "'>소요시간</span> <br> <span class='payment" + j + "'>요금 </span> <br> </div> <div class='firstVisible'> <div class='subwaystation'> <span class='name" + j + "' data-id='name'>출발 정류장</span><br> <span class='busNo" + j + "'>노선명</span> <span class='setmin setmin" + j + "'> 도착정보 </span><br> <span class='stationName" + j + "'>도착 정정류장</span> <br> </div> </div> </li> </ul> </div>");
+		$('#searchShow').after("<a href='../web/BUS_Inside.jsp?start=" + bus_start + "&end=" + bus_end + "&busNo=" + busNo + "&payment=" + payment + "&totalTime=" + totalTime + "&busId=" + busID + "&StationId=" + startStationId+ "'><div class='searchShowChild'> <ul> <li>	<div class='titleclickArea'> <span class='time time" + j + "'>소요시간</span> <br> <span class='payment" + j + "'>요금 </span> <br> </div> <div class='firstVisible'> <div class='subwaystation'> <span class='name" + j + "' data-id='name'>출발 정류장</span><br> <span class='busNo" + j + "'>노선명</span> <span class='setmin setmin" + j + "'> 도착정보 </span><br> <span class='stationName" + j + "'>도착 정정류장</span> <br> </div> </div> </li> </ul> </div></a>");
 		$('.time' + (i + 1)).text('소요시간 : ' + totalTime + '분');
 		$('.payment' + (i + 1)).text('요금 : ' + payment + '원');
 		$('.name' + (i + 1)).text('출발지 : ' + bus_start);
@@ -247,8 +259,6 @@ function showRouteList(resultArr) {
 	mapShow.setAttribute('hidden', true);
 }
 
-
-
 function reset() {
 	$('#Starting').val("");
 	$('#Destingation').val("");
@@ -260,4 +270,9 @@ function swap() {
 	var change = $('#Starting').val();
 	$('#Starting').val($('#Destingation').val());
 	$('#Destingation').val(change);
+}
+
+
+function moveInside() {
+	window.location.assign("../web/BUS_Inside.jsp?start=" + bus_start + "&end=" + bus_end + "&busNo=" + busNo + "&payment=" + payment + "&totalTime=" + totalTime + "&busId=" + busID + "&StationId=" + startStationId);
 }

@@ -27,8 +27,8 @@ function getQuery() {
 
 		headText.textContent = result.start + "<->" + result.end;
 		busName.textContent = result.busNo;
-		payment.textContent = result.payment + "원";
-		time.textContent = "소요시간 " + result.totalTime + "분";
+		payment.textContent = "요금 : " + result.payment + "원";
+		time.textContent = "소요시간 : " + result.totalTime + "분";
 
 		arvInfo();
 
@@ -74,7 +74,7 @@ function arvInfo() {
 					arrTime = x.arrtime;
 				}
 			}
-			arrive.textContent = "남은시간 " + arrTime + "초";
+			arrive.textContent = Math.floor(arrTime / 60) + '분 ' + (arrTime % 60) + '초 후 도착';
 		}
 	};
 
@@ -104,7 +104,7 @@ function arvInfo_busSearch() {
 				}
 			}
 
-			arrive.textContent = "남은시간 " + arrTime + "초";
+			arrive.textContent = Math.floor(arrTime / 60) + '분 ' + (arrTime % 60) + '초 후 도착';
 		}
 	};
 

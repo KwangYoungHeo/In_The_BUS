@@ -45,25 +45,27 @@
 		<div id="divClock">
 			<!-- 현재시간을 표시해줌 -->
 		</div>
-		<div id="searchShowPar" hidden>
-			<div id="searchShow" class="searchShowChild">
-				<ul>
-					<li>
-						<div class="titleclickArea">
-							<span class="time time1">소요시간</span><br> <span
-								class="payment1"> 요금 </span> <br>
-						</div>
-						<div class="firstVisible">
-							<div class="subwaystation">
-								<span class="name1" data-id="name">출발 정류장</span><br> <span
-									class="busNo1">노선명</span> <span class="setmin setmin1">
-									도착정보</span><br> <span class="stationName1">도착 정류장</span> <br>
+		<a href="" id="firstShow">
+			<div id="searchShowPar" hidden>
+				<div id="searchShow" class="searchShowChild">
+					<ul>
+						<li>
+							<div class="titleclickArea">
+								<span class="time time1">소요시간</span><br> <span
+									class="payment1"> 요금 </span> <br>
 							</div>
-						</div>
-					</li>
-				</ul>
+							<div class="firstVisible">
+								<div class="subwaystation">
+									<span class="name1" data-id="name">출발 정류장</span><br> <span
+										class="busNo1">노선명</span> <span class="setmin setmin1">
+										도착정보</span><br> <span class="stationName1">도착 정류장</span> <br>
+								</div>
+							</div>
+						</li>
+					</ul>
+				</div>
 			</div>
-		</div>
+		</a>
 		<p id="status"></p>
 		<a id="map-link" target="_blank"></a>
 		<div id="map" style="width: 100%; height: 83.5%;"></div>
