@@ -85,11 +85,11 @@
 			</div>
 		</div>
 
-		<div id="routes" onclick="location.href='KeywordSearch.jsp'">
+		<div id="routes" onclick="location.href='Route_Search.jsp'">
 			<h1 id="routes">길찾기</h1>
 		</div>
 
-		<div id="station" onclick="location.href='BusNameSearch.jsp'">
+		<div id="station" onclick="location.href='Bus_Name_Search.jsp'">
 			<h1 id="station">버스</h1>
 		</div>
 
