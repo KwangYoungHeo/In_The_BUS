@@ -1,40 +1,43 @@
 @charset "UTF-8";
 
-body {
+body{
+	height: 100vh; /* 세로 100% */
+}
+
+#wrap{
 	display: flex;
+	flex-direction:column;
 	justify-content: center;
 	align-items: center;
-	height: 100vh; /* 세로 100% */
 	margin: 0;
 }
 
 div#title {
-	justify-content: center;
-	align-items: center;
 	height: 100%;
 	margin: 0;
-	position: fixed;
+	/* position: fixed; */
 	text-align: -webkit-center;
-	z-index: 1;
 	box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 	width: 450px;
 }
 
-div#top {
+/* div#top {
 	width: 450px;
-	height: 3%;
+	height: 10%;
 	border: 1px solid #766666;
 	background-color: pink;
 	text-align: center;
 	position: relative;
-	z-index: 1;
-}
+	z-index: 10;
+}*/
 
 div#Search {
+	display:flex;
+	align-items:center;
 	width: 100%;
-	height: 13.5%;
+	height: 88px;
 	/* display 바꿔야하는 부분 block -> none */
-	display: block;
+/* 	display: block; */
 	/* justify-content: space-between; */
 	box-shadow: #766666;
 	border: 1px solid #766666;
@@ -50,12 +53,15 @@ div#information {
 	position: relative;
 	background-color: blue;
 	overflow-y: auto;
+	z-index: 10;
 }
 
 div#divClock {
 	width: 100%;
 	border: 1px solid black;
 	color: black;
+/* 	position: absolute;
+	z-index: 10; */
 }
 
 ol li {
@@ -80,9 +86,9 @@ input#Bus {
 	margin: 0 auto;
 	padding: 10px;
 	box-sizing: border-box;
-	position: absolute;
+/* 	position: absolute;
 	top: 4%;
-	right: 26%;
+	right: 26%; */
 	width: 60%;
 }
 
@@ -100,10 +106,9 @@ div.stationList {
 	/* text-align: center; */
 	font-size: 25px;
 	border: 1px solid black;
-	height: 7%;
+	height: 99.8%;
 	margin-top: 10px;
-	width: 100%;
-	/* 가려야해요.. */
+	width: 99.5%;
 }
 
 div#divClock {
@@ -123,3 +128,31 @@ a:vistied, a:active {
 a {
 	color: black;
 }
+
+#firstShow{
+	display: flex;
+	flex-direction: co
+	
+}
+
+.Ashow{
+	display: block;
+	align-items: center;
+/* 	z-index: 5; */
+}
+
+/* footer{
+	display: block;
+	width: 450px;
+	text-align: center;
+ 	z-index: 5;
+	position: absolute;
+	top: 160px; 
+}
+ */
+ 
+ #stationBox{
+ 	width: 450px;
+ 	overflow-y:auto;
+ 	height: 100vh
+ }
