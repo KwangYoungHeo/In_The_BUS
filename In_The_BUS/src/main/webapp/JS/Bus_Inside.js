@@ -143,7 +143,11 @@ $(document).ready(function() {
 		success: function(result) {
 			console.log(result);
 			if (result > 35) {
-				
+				$("#human").attr('fill', '#FF0000');
+			}else if (result > 25) {
+				$("#human").attr('fill', '#f5cd00');
+			}else {
+				$("#human").attr('fill', '#80FF00');
 			}
 		},
 		error: function(e) {

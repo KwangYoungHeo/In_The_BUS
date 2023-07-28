@@ -57,8 +57,8 @@ public class BusOutPredictionCon extends HttpServlet {
 		}
 		
 		// 정류장 번호, 노선 명
-		int arsID = 3184;
-		String busNo = "매월06";
+		int arsID = Integer.parseInt(request.getParameter("arsID"));
+		String busNo = request.getParameter("busNo"	);
 		
 		
 		// 필드 생성
