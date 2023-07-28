@@ -23,11 +23,10 @@ div#head {
 
 div#top {
 	width: 100%;
-	height: 13.5%;
+	height: 11.5%;
 	display: block;
 	/* justify-content: space-between; */
 	box-shadow: #766666;
-	border: 1px solid #766666;
 	background-color: #0fbcf9;
 	/* color: white; */
 	text-align: center;
@@ -60,7 +59,7 @@ input#Destingation {
 img#change {
 	/* transform: rotate(90deg); */
 	display: block;
-	margin: 20px auto;
+	margin: 17px auto;
 	/* width: 20px; */
 	position: absolute;
 	width: 2.5%;
@@ -70,7 +69,7 @@ img#change {
 
 img#reset {
 	display: block;
-	margin: 20px auto;
+	margin: 17px auto;
 	position: absolute;
 	width: 2.5%;
 	right: 39%;
@@ -79,7 +78,6 @@ img#reset {
 
 div#divClock {
 	width: 100%;
-	border: 1px solid black;
 	color: black;
 }
 

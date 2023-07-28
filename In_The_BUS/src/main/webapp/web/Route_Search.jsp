@@ -5,7 +5,7 @@
 
 <head>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>🚲Bus_Search🚲</title>
+<title>🚲Route_Search🚲</title>
 <link rel="stylesheet" href="../CSS/Route_Search.css">
 <script src="https://code.jquery.com/jquery-3.7.0.min.js"
 	integrity="sha256-2Pmvv0kuTBOenSvLm6bvfBSSHrUJ+3A7x6P5Ebd07/g="
@@ -68,7 +68,7 @@
 		</a>
 		<p id="status"></p>
 		<a id="map-link" target="_blank"></a>
-		<div id="map" style="width: 100%; height: 83.5%;"></div>
+		<div id="map" style="width: 100%; height: 85.5%;"></div>
 	</div>
 
 
