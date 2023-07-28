@@ -242,14 +242,15 @@ function showRouteList(resultArr) {
 		totalTime = resultArr.path[i].info.totalTime;
 		busID = resultArr.path[i].subPath[1].lane[0].busLocalBlID;
 		startStationId = resultArr.path[i].subPath[1].startLocalStationID;
+		arsID = resultArr.path[i].subPath[1].startArsID;
 		if(i == 0) {
-			var url = "../web/BUS_Inside.jsp?start=" + bus_start + "&end=" + bus_end + "&busNo=" + busNo + "&payment=" + payment + "&totalTime=" + totalTime + "&busId=" + busID + "&StationId=" + startStationId
+			var url = "../web/BUS_Inside.jsp?start=" + bus_start + "&end=" + bus_end + "&busNo=" + busNo + "&payment=" + payment + "&totalTime=" + totalTime + "&busId=" + busID + "&StationId=" + startStationId + "&arsID=" + arsID
 			$('#firstShow').attr("href", url);			
 		}
 		// var userID = 
 		// window.location.assign("./BUS_Inside.jsp?start=" + bus_start + "&end=" + bus_end + "&busNo=" + busNo + "&payment=" + payment + "&totalTime=" + totalTime + "&busId=" + busID + "&StationId=" + startStationId);
 		// div 늘어나는 구문 작성
-		$('#searchShow').after("<a href='../web/BUS_Inside.jsp?start=" + bus_start + "&end=" + bus_end + "&busNo=" + busNo + "&payment=" + payment + "&totalTime=" + totalTime + "&busId=" + busID + "&StationId=" + startStationId+ "'><div class='searchShowChild'> <ul> <li>	<div class='titleclickArea'> <span class='time time" + j + "'>소요시간</span> <br> <span class='payment" + j + "'>요금 </span> <br> </div> <div class='firstVisible'> <div class='subwaystation'> <span class='name" + j + "' data-id='name'>출발 정류장</span><br> <span class='busNo" + j + "'>노선명</span> <span class='setmin setmin" + j + "'> 도착정보 </span><br> <span class='stationName" + j + "'>도착 정정류장</span> <br> </div> </div> </li> </ul> </div></a>");
+		$('#searchShow').after("<a href='../web/BUS_Inside.jsp?start=" + bus_start + "&end=" + bus_end + "&busNo=" + busNo + "&payment=" + payment + "&totalTime=" + totalTime + "&busId=" + busID + "&StationId=" + startStationId+ "&arsID=" + arsID + "'><div class='searchShowChild'> <ul> <li>	<div class='titleclickArea'> <span class='time time" + j + "'>소요시간</span> <br> <span class='payment" + j + "'>요금 </span> <br> </div> <div class='firstVisible'> <div class='subwaystation'> <span class='name" + j + "' data-id='name'>출발 정류장</span><br> <span class='busNo" + j + "'>노선명</span> <span class='setmin setmin" + j + "'> 도착정보 </span><br> <span class='stationName" + j + "'>도착 정정류장</span> <br> </div> </div> </li> </ul> </div></a>");
 		$('.time' + (i + 1)).text('소요시간 : ' + totalTime + '분');
 		$('.payment' + (i + 1)).text('요금 : ' + payment + '원');
 		$('.name' + (i + 1)).text('출발지 : ' + bus_start);

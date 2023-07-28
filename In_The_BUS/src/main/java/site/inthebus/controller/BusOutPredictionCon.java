@@ -105,6 +105,7 @@ public class BusOutPredictionCon extends HttpServlet {
 		
 		int result = (int) (Math.abs(sum - outSum) * (1-((double) outSum / outTotal)));
 		System.out.println(result);
+		response.getWriter().print(result);
 	}
 
 }
