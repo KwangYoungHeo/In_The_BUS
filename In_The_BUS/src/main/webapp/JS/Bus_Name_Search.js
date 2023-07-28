@@ -22,6 +22,11 @@ input.addEventListener('keydown', searchBusLaneAJAX);
 
 function searchBusLaneAJAX(e) {
 	if (e.key == 'Enter') {
+		
+		// $("#top").removeAttr("hidden");
+		$("#information").removeAttr("hidden");
+		$("#Search").css("display", "none");
+		
 		var bus = document.getElementById('Bus').value;
 		var xhr = new XMLHttpRequest();
 		var url = "https://api.odsay.com/v1/api/searchBusLane?apiKey=bl1n7aNENQxrtjDL46c0hg&CID=5000&busNo="
@@ -54,6 +59,7 @@ function searchBusLaneAJAX(e) {
 
 function showStation(busInfo) {
 	$('#Show').text(busInfo.station[0].stationName);
+	$('#num').text(busInfo.busNo);
 	for (var i = 2; i < busInfo.station.length; i++) {
 		var busNo = busInfo.busNo;
 		var busID = busInfo.busLocalBlID;
@@ -61,10 +67,10 @@ function showStation(busInfo) {
 		var localStationID = busInfo.station[i].localStationID;
 		var stationName = busInfo.station[i].stationName;
 		
-		$('#Show').after("<a href='../web/BUS_Inside.jsp?arsID=" + arsID
+		$('#firstShow').after("<div class='Ashow'><a href='../web/BUS_Inside.jsp?arsID=" + arsID
 								+ "&localStationID=" + localStationID
 								+ "&stationName=" + stationName + "&busID="
-								+ busID + "&busNo=" + busNo + "' ><div class='stationList'>" + stationName + " </div></a>");
+								+ busID + "&busNo=" + busNo + "'><div class='stationList'>" + stationName + " </div></a></div>");
 		
 	}
 };
