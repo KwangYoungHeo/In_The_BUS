@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="site.inthebus.mapper.BusDataMapper">
+	<select id="inCount" parameterType="BusDataDTO" resultType="int">
+		SELECT COALESCE(SUM(incount), 0)
+		FROM bus_07
+		WHERE busno = #{busNo} AND
+		ars_id = #{ars_id}
+		AND day = #{day} AND time = #{time}
+	</select>
+
+	<select id="outCount" parameterType="BusDataDTO"
+		resultType="int">
+		SELECT COALESCE(SUM(incount), 0)
+		FROM bus_07
+		WHERE busno = #{busNo} AND ars_id = #{ars_id}
+		AND day BETWEEN #{day} AND #{day_range}
+		AND time = #{time}
+	</select>
+</mapper>

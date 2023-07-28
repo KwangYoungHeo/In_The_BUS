@@ -61,9 +61,9 @@
 				</tr>
 			</table>
 		</div>
-	<div>
+
 		<hr>
-	</div>
+
 		<div id="info">
 			<span id="payment">요금</span>
 			<p id="time">소요시간</p>
