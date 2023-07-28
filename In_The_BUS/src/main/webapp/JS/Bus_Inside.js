@@ -20,10 +20,10 @@ function getQuery() {
 
 	if (result.start != null) {
 		// 길찾기를 통해 들어온 경우				
+		arsID = result.arsID;
 		busID = result.busId;
 		StationID = result.StationId;
 		busNo = result.busNo;
-
 
 		headText.textContent = result.start + "<->" + result.end;
 		busName.textContent = result.busNo;
@@ -133,7 +133,24 @@ $(document).ready(function() {
 		}
 	});
 	
-
+	$.ajax({
+		url: "../BusOutPredictionCon",
+		data: {
+			arsID: arsID,
+			busNo: busNo
+		},
+		dataType: "text",
+		success: function(result) {
+			console.log(result);
+			if (result > 35) {
+				
+			}
+		},
+		error: function(e) {
+			console.log(e);
+		}
+		
+	});
 
 	$("svg").click(function() {
 		if ($('#star').attr('height') == '0%') {
