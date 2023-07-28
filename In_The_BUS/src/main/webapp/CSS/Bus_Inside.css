@@ -6,6 +6,7 @@ body {
 	align-items: center;
 	height: 100vh; /* 세로 100% */
 	margin: 0;
+	background-image: url("../img/Background.jpg");
 }
 
 div#total {
@@ -55,4 +56,47 @@ div#info {
 
 div.svg2{
 	position: absolute;
+}
+
+p#headText{
+   font-family: 'Sunflower', sans-serif;
+   font-weight: 400;
+   font-size: 20px;
+}
+td{
+	font-family: 'Noto Serif KR', serif;
+	font-family: 'Sunflower', sans-serif;
+}
+h1#busName{
+	font-family: 'Noto Serif KR', serif;
+	font-family: 'Song Myung', serif;
+	font-family: 'Sunflower', sans-serif;
+}
+span#payment{
+	font-family: 'Nanum Gothic', sans-serif;
+	font-family: 'Noto Serif KR', serif;
+	font-family: 'Song Myung', serif;
+	font-family: 'Sunflower', sans-serif;
+	font-size: 30px;
+}
+p#time{
+	font-family: 'Nanum Gothic', sans-serif;
+	font-family: 'Noto Serif KR', serif;
+	font-family: 'Song Myung', serif;
+	font-family: 'Sunflower', sans-serif;
+	font-size:30px;
+}
+span#inside{
+	font-family: 'Nanum Gothic', sans-serif;
+	font-family: 'Noto Serif KR', serif;
+	font-family: 'Song Myung', serif;
+	font-family: 'Sunflower', sans-serif;
+	font-size:30px;
+}
+p#arrive{
+	font-family: 'Nanum Gothic', sans-serif;
+	font-family: 'Noto Serif KR', serif;
+	font-family: 'Song Myung', serif;
+	font-family: 'Sunflower', sans-serif;
+	font-size:30px;
 }

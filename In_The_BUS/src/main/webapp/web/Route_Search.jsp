@@ -7,6 +7,9 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>🚲Route_Search🚲</title>
 <link rel="stylesheet" href="../CSS/Route_Search.css">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Hahmlet:wght@500&family=Nanum+Gothic&family=Noto+Serif+KR:wght@200&family=Song+Myung&family=Sunflower:wght@300&display=swap" rel="stylesheet">
 <script src="https://code.jquery.com/jquery-3.7.0.min.js"
 	integrity="sha256-2Pmvv0kuTBOenSvLm6bvfBSSHrUJ+3A7x6P5Ebd07/g="
 	crossorigin="anonymous"></script>

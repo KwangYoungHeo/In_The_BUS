@@ -10,6 +10,9 @@
 	integrity="sha256-2Pmvv0kuTBOenSvLm6bvfBSSHrUJ+3A7x6P5Ebd07/g="
 	crossorigin="anonymous"></script>
 <link rel="stylesheet" href="../CSS/Bus_Inside.css">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Sunflower:wght@300&display=swap" rel="stylesheet">
 
 <style type="text/css">
 #star {

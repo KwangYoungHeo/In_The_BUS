@@ -40,8 +40,7 @@ div#Search {
 /* 	display: block; */
 	/* justify-content: space-between; */
 	box-shadow: #766666;
-	border: 1px solid #766666;
-	background-color: blue;
+	background-color: #0fbcf9;
 	/* color: white; */
 	text-align: center;
 }
@@ -49,9 +48,8 @@ div#Search {
 div#information {
 	width: 450px;
 	height: 12%;
-	border: 1px solid black;
 	position: relative;
-	background-color: blue;
+	background-color: #0fbcf9;
 	overflow-y: auto;
 	z-index: 10;
 }
@@ -95,7 +93,6 @@ input#Bus {
 div#Show {
 	/* text-align: center; */
 	font-size: 25px;
-	border: 1px solid black;
 	height: 7%;
 	margin-top: 10px;
 	width: 100%;
@@ -105,7 +102,6 @@ div#Show {
 div.stationList {
 	/* text-align: center; */
 	font-size: 25px;
-	border: 1px solid black;
 	height: 99.8%;
 	margin-top: 10px;
 	width: 99.5%;
@@ -113,7 +109,6 @@ div.stationList {
 
 div#divClock {
 	width: 100%;
-	border: 1px solid black;
 	color: black;
 }
 

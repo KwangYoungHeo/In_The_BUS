@@ -6,6 +6,7 @@ body {
 	align-items: center;
 	height: 100vh; /* 세로 100% */
 	margin: 0;
+	background-image: url("../img/Background.jpg");
 }
 
 div#head {
@@ -40,8 +41,13 @@ input#Starting {
 	box-sizing: border-box;
 	position: absolute;
 	top: 2%;
-	right: 42%;
+	right: 43%;
 	width: 17%;
+	font-family: 'Hahmlet', serif;
+	font-family: 'Nanum Gothic', sans-serif;
+	font-family: 'Noto Serif KR', serif;
+	font-family: 'Song Myung', serif;
+	font-family: 'Sunflower', sans-serif;
 }
 
 input#Destingation {
@@ -53,7 +59,12 @@ input#Destingation {
 	position: absolute;
 	width: 17%;
 	top: 7%;
-	right: 42%;
+	right: 43%;
+	font-family: 'Hahmlet', serif;
+	font-family: 'Nanum Gothic', sans-serif;
+	font-family: 'Noto Serif KR', serif;
+	font-family: 'Song Myung', serif;
+	font-family: 'Sunflower', sans-serif;
 }
 
 img#change {
@@ -63,7 +74,7 @@ img#change {
 	/* width: 20px; */
 	position: absolute;
 	width: 2.5%;
-	right: 39%;
+	right: 40%;
 	top: 0;
 }
 
@@ -72,8 +83,11 @@ img#reset {
 	margin: 17px auto;
 	position: absolute;
 	width: 2.5%;
-	right: 39%;
-	top: 5%;
+	right: 40%;
+	top: 7%;
+	margin-top: 0;
+	margin-bottom: 0;
+	right: 40%;
 }
 
 div#divClock {
@@ -135,12 +149,13 @@ p#status {
 	margin-top: 10px; /* 조정 가능한 여백 값 */
 }
 
-#NewName {
+h1#NewName {
 	text-align: center;
 	display: inline-block;
 	margin: 0;
 	padding: 0;
 	font-size: 20px;
+	font-family: 'Noto Sans KR', sans-serif;
 }
 
 #buttonContainer {
