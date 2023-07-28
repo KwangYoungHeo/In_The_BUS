@@ -2,6 +2,7 @@
 
 body{
 	height: 100vh; /* 세로 100% */
+	background-image: url("../img/Background.jpg");
 }
 
 #wrap{
@@ -56,10 +57,11 @@ div#information {
 
 div#divClock {
 	width: 100%;
-	border: 1px solid black;
 	color: black;
 /* 	position: absolute;
 	z-index: 10; */
+	background-color: white;
+	text-align: left;
 }
 
 ol li {
@@ -68,7 +70,8 @@ ol li {
 }
 
 li#num {
-	font-size: 28px;
+	font-family: 'Jua', sans-serif;
+	font-size: 30px;
 }
 
 ol {
@@ -77,6 +80,7 @@ ol {
 
 li {
 	margin-left: 7px;
+	font-family: 'Hahmlet', serif;
 }
 
 input#Bus {
@@ -150,5 +154,7 @@ a {
  #stationBox{
  	width: 450px;
  	overflow-y:auto;
- 	height: 100vh
+ 	height: 100vh;
+ 	box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+ 	background-color: #ecf0f1;
  }

@@ -5,11 +5,12 @@ body {
     align-items: center;
     height: 100vh; /* 세로 100% */
     margin: 0;
+    background-image: url("../img/Background.jpg");
   }
   div#head {
     width: 450px; /* 가로 400px */
     height: 100%; /* 세로 100% */
-    /* border: 1px solid #ccc; */
+    border: 1px solid #ccc;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     /* padding: 50px; */
     /* display: flex; */
