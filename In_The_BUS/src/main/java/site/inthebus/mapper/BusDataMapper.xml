@@ -5,7 +5,7 @@
 <mapper namespace="site.inthebus.mapper.BusDataMapper">
 	<select id="inCount" parameterType="BusDataDTO" resultType="int">
 		SELECT COALESCE(SUM(incount), 0)
-		FROM bus_07
+		FROM bus_data
 		WHERE busno = #{busNo} AND
 		ars_id = #{ars_id}
 		AND day = #{day} AND time = #{time}
@@ -14,7 +14,7 @@
 	<select id="outCount" parameterType="BusDataDTO"
 		resultType="int">
 		SELECT COALESCE(SUM(incount), 0)
-		FROM bus_07
+		FROM bus_data
 		WHERE busno = #{busNo} AND ars_id = #{ars_id}
 		AND day BETWEEN #{day} AND #{day_range}
 		AND time = #{time}

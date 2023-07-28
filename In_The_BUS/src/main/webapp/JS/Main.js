@@ -127,7 +127,7 @@ function bookmark(result) {
 			if (bookmarkList != null) {
 				console.log(bookmarkList);
 				for (var i = 0; i < bookmarkList.length; i++) {
-					$(".firstBookmark").after("<a href='../web/BUS_Inside.jsp?arsID=" + bookmarkList[i].ars_ID
+					$(".firstBookmark").after("<a href='../web/BUS_Inside.jsp?arsID=" + bookmarkList[i].ars_id
 						+ "&localStationID=" + bookmarkList[i].station_id + "&station_name=" + bookmarkList[i].station_name + "&busID="+ bookmarkList[i].bus_id 
 						+ "&busNo=" + bookmarkList[i].bus_name + "'><div class='bookmark'><h3>" + bookmarkList[i].bus_name + "</h3></div></a>");
 				}
