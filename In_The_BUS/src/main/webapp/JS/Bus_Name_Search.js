@@ -6,10 +6,8 @@ function showClock() {
 	var divClock = document.getElementById('divClock');
 	var msg = `오늘 `
 	if (currentDate.getHours() - 12 + "시 ") {
-		msg += '오전';
 		msg += currentDate.getHours() + '시 ';
 	} else {
-		msg += '오후';
 		msg += currentDate.getHours() + '시 ';
 	}
 

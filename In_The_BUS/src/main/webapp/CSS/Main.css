@@ -30,6 +30,10 @@ div#loghead {
 	display: inline-flex;
 	background-color: #0fbcf9;
 	color: white;
+	margin-right: 0;
+}
+div#loghead > *{
+	padding-right: 20px;
 }
 
 div#head {
@@ -96,9 +100,9 @@ div#title {
 h1#title {
 	display: inline;
 	/* text-align: center; */
-	font-size: 45px;
-	margin-left: 45px;
-	margin-top: 44px;
+	font-size: 40px;
+	margin-left: 75px;
+	margin-top: 40px;
 	margin-bottom: 0px;
 	position: absolute;
 	top: -4.5%;
@@ -116,7 +120,9 @@ div#trigger {
 	float: right;
 	z-index: 10;
 	border: 1px solid black;
-	right: 36.8%
+	right: 36.8%;
+	margin-right: 0;
+	margin-top: 0;
 }
 
 div#trigger.active {
@@ -169,8 +175,8 @@ div#station {
 /* 햄버거 메뉴  */
 #menu-trigger {
 	margin-right: 2.5%;
-	margin-top: 20px;
 	display: inline-flex;
+	justify-content: space-between;
 }
 
 #menu-trigger, #menu-trigger span {
@@ -182,7 +188,7 @@ div#station {
 #menu-trigger {
 	position: relative;
 	width: 50px;
-	height: 44px;
+	height: 42px;
 }
 
 #menu-trigger span {
