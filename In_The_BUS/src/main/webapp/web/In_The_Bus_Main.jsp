@@ -92,7 +92,7 @@
 			<h1 id="station">버스</h1>
 		</div>
 
-		<div class="firstBookmark bookmark" onclick="addBookmark()" hidden>
+		<div class="firstBookmark bookmark" onclick="addBookmark()" >
 			<img alt="닫는중" src="../img/Close.png" id="close1" hidden>
 		</div>
 	</div>

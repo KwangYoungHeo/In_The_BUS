@@ -132,6 +132,8 @@ $(document).ready(function() {
 			console.log(e);
 		}
 	});
+	
+
 
 	$("svg").click(function() {
 		if ($('#star').attr('height') == '0%') {
