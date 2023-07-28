@@ -13,8 +13,8 @@
 
 
 <body>
-	<div id="title">
-		<div id="top"></div>
+	<div id="title" style="width: 450px">
+		<div id="top_side"></div>
 		<div id="information">
 			<ol>
 				<li id="num"><strong> 매월 6 </strong></li>
@@ -24,7 +24,7 @@
 			</ol>
 		</div>
 	</div>
-	<div id="head">
+	<div id="stop_sign">
 		<div class="station">정류장1</div>
 	</div>
 	</div>

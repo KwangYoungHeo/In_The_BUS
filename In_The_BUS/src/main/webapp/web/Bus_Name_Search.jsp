@@ -15,8 +15,10 @@
 <body onload="showClock()">
 	<div id="head">
 		<div id="top">
+			<form action="Bus_Name_Search_Result.jsp">
 			<input type="text" Placeholder="버스명을 입력해주세요." id="Bus">
-			<!-- <input type="button" value="검색" id="button"> -->
+			<input type="submit" value="검색" id="button">
+			</form>
 		</div>
 		<div id="divClock">
 			<!-- 현재시간을 표시해줌 -->

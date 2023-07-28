@@ -17,7 +17,7 @@ body {
     margin: 0;
 }
 
-div#head {
+div#stop_sign {
     width: 450px; /* 가로 400px */
     height: 100%; /* 세로 100% */
     /* border: 1px solid #ccc; */
@@ -33,14 +33,13 @@ div#head {
 
 
 }
-  div#top{
+  div#top_side{
     /* position: fixed; */
     /* top: 0; */
     /* left: 0; */
     /* padding: 10px; */
     width: 450px;
     height: 3%;
-
     /* justify-content: space-between; */
     box-shadow: #766666;
     border: 1px solid #766666;
@@ -55,7 +54,7 @@ div#head {
     height: 12%;
     border: 1px solid black;
     position: relative;
-    background-color: blue;
+    background-color: white;
     overflow-y: auto;
   }
   div.station{

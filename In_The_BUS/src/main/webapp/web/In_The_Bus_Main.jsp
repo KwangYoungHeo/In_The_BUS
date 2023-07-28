@@ -32,8 +32,7 @@
 				<h1 id="title" onclick="location.reload()">In The Bus</h1>
 			</div>
 			<div id="menu-trigger">
-				<span class="menu"></span> <span class="menu"></span> <span
-					class="menu"></span>
+				<span class="menu"></span> <span class="menu"></span> <span class="menu"></span>
 			</div>
 
 		</div>
