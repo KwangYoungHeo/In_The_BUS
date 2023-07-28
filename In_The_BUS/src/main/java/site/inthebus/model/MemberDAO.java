@@ -16,5 +16,11 @@ public class MemberDAO {
 		return row;
 	}
 
+	public MemberDTO login(MemberDTO dto) {
+		SqlSession session = sqlSessionFactory.openSession(true);
+		MemberDTO info = session.selectOne("login", dto);
+		session.close();
+		return info;
+	}
 
 }

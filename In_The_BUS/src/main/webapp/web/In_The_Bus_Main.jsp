@@ -41,6 +41,7 @@
 			<div id="user">
 				<!-- 로그인 링크 , 카카오 로그인 버튼 클릭시 링크 연결 만들기 -->
 				<button id="Login">로그인</button>
+				
 				<div id=modal>
 					<div id=modal-content>
 						<a id="kakao-login-btn" href="javascript:kakaoLogin()"> <img
@@ -51,8 +52,6 @@
 					</div>
 				</div>
 				<div id="blur-background"></div>
-				<h1 id="profile" onclick="location.href='LoginTest.jsp'" hidden>로그인
-					해주세요</h1>
 				<hr>
 			</div>
 			<div id="favorites">
@@ -92,106 +91,14 @@
 			<h1 id="station">버스</h1>
 		</div>
 
-		<div class="firstBookmark bookmark" onclick="addBookmark()" >
+		<div class="firstBookmark bookmark">
 			<img alt="닫는중" src="../img/Close.png" id="close1" hidden>
 		</div>
 	</div>
 
 	<script src="../JS/Main_silder.js"></script>
 	<script src="../JS/Main_hamburger.js"></script>
-
-	<script type="text/javascript">
-		$(document).ready(function() {
-			$("#routes").mouseenter(function() {
-				$(this).css('background-color', '#E6E6E6');
-			});
-
-			$("#routes").mouseleave(function() {
-				$(this).css('background-color', 'white');
-			});
-			
-			$("#station").mouseenter(function() {
-				$(this).css('background-color', '#E6E6E6');
-			});
-			
-			$("#station").mouseleave(function() {
-				$(this).css('background-color', 'white');
-			});
-		});
-		
-		let addBookmark = () => {
-			$(".firstBookmark").after("<div class='bookmark'></div>")
-		};
-	</script>
-	<script type="text/javascript">
-    document.addEventListener('DOMContentLoaded', function () {
-        const hamburgerButton = document.getElementById('Login');
-        const modal = document.getElementById('modal');
-        const closeButton = document.getElementById('close-button');
-        const blurBackground = document.getElementById('blur-background');
-
-        hamburgerButton.addEventListener('click', function () {
-            modal.style.display = 'block';
-            blurBackground.style.display = 'block';
-        });
-
-        closeButton.addEventListener('click', function () {
-            modal.style.display = 'none';
-            blurBackground.style.display = 'none';
-        });
-
-        blurBackground.addEventListener('click', function () {
-            modal.style.display = 'none';
-            blurBackground.style.display = 'none';
-        });
-    });
-	</script>
-	<script>
-		let kakao_account = "";
-		
-        window.Kakao.init("cc74d2eaa158f56dc0ca061964ab3cdb");
-
-        function kakaoLogin() {
-            window.Kakao.Auth.login({
-                scope: 'profile_nickname, profile_image, account_email',
-                success: function (authObj) {
-                    console.log(authObj); // 토큰 정보
-                    window.Kakao.API.request({
-                        url: '/v2/user/me',
-                        success: res => {
-                            kakao_account = res.kakao_account;
-                            console.log(kakao_account); // 로그인한 회원 정보
-                            $.ajax({
-                            	url : "../JoinCon",
-                            	data : {
-                            		id : kakao_account.email,
-                            		nickname : kakao_account.profile.nickname,
-                            		profile_img : kakao_account.profile.profile_image_url
-                            	},
-                            	dataType : "json",
-                            	success : function(result){ 
-                    				if(result==null){
-                    					alert("result null")
-                    				}else{
-                    					alert("result 값 존재")
-                    					console.log(result);
-                    					document.cookie = "jsonData=" + encodeURIComponent(JSON.stringify(result));
-                    				}
-                    			},
-                    			/* 실패 시 */
-                    			error:function(e){
-                    				alert('실패');
-                    				console.log(e);
-                    			}
-                            	
-                            })
-                        }
-                    });
-                }
-            });
-        }
-
-    </script>
+	<script src="../JS/Main.js"></script>
 
 </body>
 </html>

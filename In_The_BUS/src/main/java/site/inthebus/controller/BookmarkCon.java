@@ -24,8 +24,11 @@ public class BookmarkCon extends HttpServlet {
 		String bus_id = request.getParameter("bus_id");
 		String station_id = request.getParameter("station_id");
 		String bus_name = request.getParameter("bus_name");
-
-		BookmarkDTO dto = new BookmarkDTO(id, bus_id, station_id, bus_name);
+		String ars_id = request.getParameter("ars_id");
+		String station_name = request.getParameter("station_name");
+		
+		BookmarkDTO dto = new BookmarkDTO(id, bus_id, station_id, bus_name, ars_id, station_name);
+		
 		BookmarkDTO dto_du = new BookmarkDTO(id, bus_id, station_id);
 		BookmarkDAO dao = new BookmarkDAO();
 		Gson gson = new Gson();

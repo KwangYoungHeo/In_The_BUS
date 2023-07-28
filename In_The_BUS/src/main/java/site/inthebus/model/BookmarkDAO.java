@@ -1,5 +1,7 @@
 package site.inthebus.model;
 
+import java.util.ArrayList;
+
 import org.apache.ibatis.session.SqlSession;
 import org.apache.ibatis.session.SqlSessionFactory;
 
@@ -35,5 +37,12 @@ public class BookmarkDAO {
 		
 		return row;
 	}
-
+	
+	public ArrayList<BookmarkDTO> selectBookmark(String id) {
+		SqlSession session = sqlSessionFactory.openSession(true);
+		ArrayList<BookmarkDTO> bookmarkList = (ArrayList)session.selectList("selectBookmark", id);
+		session.close();
+		
+		return bookmarkList;
+	}
 }

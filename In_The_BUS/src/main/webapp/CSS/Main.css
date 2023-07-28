@@ -32,7 +32,8 @@ div#loghead {
 	color: white;
 	margin-right: 0;
 }
-div#loghead > *{
+
+div#loghead>* {
 	padding-right: 20px;
 }
 
@@ -43,8 +44,10 @@ div#head {
 	box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 	/* padding: 16px; */
 	/* display: flex; */
-	flex-wrap: wrap; flex-direction : column; justify-content : flex-start;
-	align-items : flex-start;
+	flex-wrap: wrap;
+	flex-direction: column;
+	justify-content: flex-start;
+	align-items: flex-start;
 	background-color: #EDEDEF;
 	flex-direction: column;
 	justify-content: flex-start;
@@ -90,6 +93,9 @@ div.bookmark {
 	margin-left: 35px;
 }
 
+div.firstBookmark{
+	display: none;
+}
 div#title {
 	padding: 15px 4;
 	flex-basis: 70%;
@@ -300,6 +306,30 @@ img#close1 {
 	/* 선택 효과 제거 */
 	outline: none;
 }
-#Login:hover{
+
+#Login:hover {
 	background-color: #45aaf2;
+}
+
+#userImg {
+	border-radius: 100%;
+	width: 60px;
+	display: initial;
+}
+
+#userId {
+	display: flex;
+	align-items: center;
+}
+
+a:link {
+	text-decoration: none;
+}
+
+a:vistied, a:active {
+	color: black;
+}
+
+a {
+	color: black;
 }

@@ -69,7 +69,7 @@ function showStation(busInfo) {
 		
 		$('#firstShow').after("<div class='Ashow'><a href='../web/BUS_Inside.jsp?arsID=" + arsID
 								+ "&localStationID=" + localStationID
-								+ "&stationName=" + stationName + "&busID="
+								+ "&station_name=" + stationName + "&busID="
 								+ busID + "&busNo=" + busNo + "'><div class='stationList'>" + stationName + " </div></a></div>");
 		
 	}
