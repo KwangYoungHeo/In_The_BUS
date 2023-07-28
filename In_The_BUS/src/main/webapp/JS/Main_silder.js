@@ -30,4 +30,4 @@
         currrentInedex = 0;
       }
     }
-    setInterval(sliderEffect, 2000);
+    setInterval(sliderEffect, 2500);

@@ -67,17 +67,17 @@
 			<div class="slider__inner">
 				<div class="slider">
 					<img
-						src="https://i0.wp.com/wpsites.net/wp-content/uploads/2013/09/500x150.png?w=500&ssl=1"
+						src="../img/station_main.png"
 						alt="이미지1">
 				</div>
 				<div class="slider">
 					<img
-						src="https://i0.wp.com/wpsites.net/wp-content/uploads/2013/09/500x150.png?w=500&ssl=1"
+						src="../img/bus_1.png"
 						alt="이미지2">
 				</div>
 				<div class="slider">
 					<img
-						src="https://i0.wp.com/wpsites.net/wp-content/uploads/2013/09/500x150.png?w=500&ssl=1"
+						src="../img/inside.png"
 						alt="이미지3">
 				</div>
 			</div>

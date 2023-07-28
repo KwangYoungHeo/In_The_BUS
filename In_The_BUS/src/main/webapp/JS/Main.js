@@ -90,7 +90,7 @@ function kakaoLogin() {
 										} else {
 											alert("회원가입 성공!!")
 											console.log(result);
-											document.cookie = "jsonData=" + encodeURIComponent(JSON.stringify(result));
+											document.cookie = "jsonData=" + encodeURIComponent(JSON.stringify(result))+"; max-age=" + (360*1000);
 											member(result);
 											bookmark(result);
 										}
@@ -129,7 +129,7 @@ function bookmark(result) {
 				for (var i = 0; i < bookmarkList.length; i++) {
 					$(".firstBookmark").after("<a href='../web/BUS_Inside.jsp?arsID=" + bookmarkList[i].ars_id
 						+ "&localStationID=" + bookmarkList[i].station_id + "&station_name=" + bookmarkList[i].station_name + "&busID="+ bookmarkList[i].bus_id 
-						+ "&busNo=" + bookmarkList[i].bus_name + "'><div class='bookmark'><h3>" + bookmarkList[i].bus_name + "</h3></div></a>");
+						+ "&busNo=" + bookmarkList[i].bus_name + "'><div class='bookmark'><h3>" + bookmarkList[i].bus_name + "</h3><span>" + bookmarkList[i].station_name + "</span></div></a>");
 				}
 			}
 		}

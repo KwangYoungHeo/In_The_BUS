@@ -89,7 +89,7 @@ div.bookmark {
 	height: 5%;
 	/* border: 10px solid black; */
 	background-color: white;
-	margin-top: 5px;
+	margin-top: 13px;
 	margin-left: 35px;
 }
 
@@ -332,4 +332,9 @@ a:vistied, a:active {
 
 a {
 	color: black;
+}
+
+h3 {
+	margin: auto;
+    margin-bottom: 6px;
 }
