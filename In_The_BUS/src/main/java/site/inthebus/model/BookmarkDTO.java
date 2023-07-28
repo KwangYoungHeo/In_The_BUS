@@ -10,10 +10,12 @@ import lombok.RequiredArgsConstructor;
 @AllArgsConstructor
 @NoArgsConstructor
 @RequiredArgsConstructor
-public class TestMemberDTO {
-
+public class BookmarkDTO {
+	
 	@NonNull private String id;
-	private String nickname;
-	private String profile_img;
+	@NonNull private String bus_id;
+	@NonNull private String station_id;
+	private String bus_name;
+	
 
 }

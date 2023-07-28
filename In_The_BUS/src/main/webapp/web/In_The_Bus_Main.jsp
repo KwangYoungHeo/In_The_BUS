@@ -163,7 +163,7 @@
                             kakao_account = res.kakao_account;
                             console.log(kakao_account); // 로그인한 회원 정보
                             $.ajax({
-                            	url : "../TestJoinCon",
+                            	url : "../JoinCon",
                             	data : {
                             		id : kakao_account.email,
                             		nickname : kakao_account.profile.nickname,

@@ -5,11 +5,11 @@ import org.apache.ibatis.session.SqlSessionFactory;
 
 import site.inthebus.database.SqlSessionManager;
 
-public class TestMemberDAO {
+public class MemberDAO {
 	
-	private static SqlSessionFactory sqlSessionFactory = SqlSessionManager.getSqlSession();
+	SqlSessionFactory sqlSessionFactory = SqlSessionManager.getSqlSession();
 	
-	public int testJoin(TestMemberDTO dto) {
+	public int testJoin(MemberDTO dto) {
 		SqlSession session = sqlSessionFactory.openSession(true);
 		int row = session.insert("testJoin", dto);
 		session.close();

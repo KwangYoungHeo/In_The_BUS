@@ -115,7 +115,7 @@ getQuery();
 
 $(document).ready(function() {
 	$.ajax({
-		url: "../TestBookmarkDuplicationCheckCon",
+		url: "../BookmarkDuplicationCheckCon",
 		data: {
 			id: jsonData.id,
 			bus_id: busID,
@@ -137,7 +137,7 @@ $(document).ready(function() {
 		if ($('#star').attr('height') == '0%') {
 			// 즐겨찾기 추가
 			$.ajax({
-				url: "../TestBookmarkCon",
+				url: "../BookmarkCon",
 				data: {
 					id: jsonData.id,
 					bus_id: busID,
@@ -163,7 +163,7 @@ $(document).ready(function() {
 		} else {
 			// 즐겨찾기 삭제
 			$.ajax({
-				url: "../TestBookmarkDeleteCon",
+				url: "../BookmarkDeleteCon",
 				data: {
 					id: jsonData.id,
 					bus_id: busID,

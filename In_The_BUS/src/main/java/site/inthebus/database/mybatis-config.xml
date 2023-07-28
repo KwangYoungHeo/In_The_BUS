@@ -6,8 +6,9 @@
 <properties resource="site/inthebus/database/db.properties"></properties>
 
 <typeAliases>
-	<typeAlias type="site.inthebus.model.TestMemberDTO" alias="TestMemberDTO"/>
-	<typeAlias type="site.inthebus.model.TestBookmarkDTO" alias="TestBookmarkDTO"/>
+	<typeAlias type="site.inthebus.model.MemberDTO" alias="MemberDTO"/>
+	<typeAlias type="site.inthebus.model.BookmarkDTO" alias="BookmarkDTO"/>
+	<typeAlias type="site.inthebus.model.BusDataDTO" alias="BusDataDTO"/>
 </typeAliases>
 
   <environments default="development">
@@ -23,7 +24,8 @@
   </environments>
   
   <mappers>
-  	<mapper resource="site/inthebus/mapper/TestMemberMapper.xml"/>
-  	<mapper resource="site/inthebus/mapper/TestBookmarkMapper.xml"/>
+  	<mapper resource="site/inthebus/mapper/MemberMapper.xml"/>
+  	<mapper resource="site/inthebus/mapper/BookmarkMapper.xml"/>
+  	<mapper resource="site/inthebus/mapper/BusDataMapper.xml"/>
   </mappers>
 </configuration>
