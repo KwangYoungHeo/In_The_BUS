@@ -4,7 +4,7 @@
   "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="site.inthebus.mapper.BookmarkMapper">
 	<insert id="insertBookmark" parameterType="BookmarkDTO">
-		insert into bus_bookmark values(#{id},#{bus_id},#{station_id},#{bus_name})
+		insert into bus_bookmark values(#{id},#{bus_id},#{station_id},#{bus_name},#{ars_id},#{station_name})
 	</insert>
 	
 	<select id="duplicationCheck" parameterType="BookmarkDTO" resultType="BookmarkDTO">
@@ -14,4 +14,8 @@
 	<delete id="deleteBookmark" parameterType="BookmarkDTO">
 		delete from bus_bookmark where id=#{id} and bus_id=#{bus_id} and station_id = #{station_id}
 	</delete>
+	
+	<select id="selectBookmark" parameterType="String" resultType="BookmarkDTO">
+		select * from bus_bookmark where id=#{id}
+	</select>
 </mapper>

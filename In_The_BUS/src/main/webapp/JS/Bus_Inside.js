@@ -24,6 +24,7 @@ function getQuery() {
 		busID = result.busId;
 		StationID = result.StationId;
 		busNo = result.busNo;
+		station_name = result.start;
 
 		headText.textContent = result.start + "<->" + result.end;
 		busName.textContent = result.busNo;
@@ -38,8 +39,9 @@ function getQuery() {
 		StationID = result.localStationID;
 		busID = result.busID;
 		busNo = result.busNo;
-
-		headText.textContent = result.stationName;
+		station_name = result.station_name;
+		
+		headText.textContent = result.station_name;
 		busName.textContent = result.busNo;
 		payment.setAttribute("hidden", true);
 		time.setAttribute("hidden", true);
@@ -142,9 +144,9 @@ $(document).ready(function() {
 		dataType: "text",
 		success: function(result) {
 			console.log(result);
-			if (result > 35) {
+			if (result > 30) {
 				$("#human").attr('fill', '#FF0000');
-			}else if (result > 25) {
+			}else if (result > 20) {
 				$("#human").attr('fill', '#f5cd00');
 			}else {
 				$("#human").attr('fill', '#80FF00');
@@ -165,7 +167,9 @@ $(document).ready(function() {
 					id: jsonData.id,
 					bus_id: busID,
 					station_id: StationID,
-					bus_name: busNo
+					bus_name: busNo,
+					ars_id : arsID,
+					station_name : station_name
 				},
 				dataType: "json",
 

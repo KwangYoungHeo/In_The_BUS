@@ -16,6 +16,13 @@ public class BookmarkDTO {
 	@NonNull private String bus_id;
 	@NonNull private String station_id;
 	private String bus_name;
+	private String ars_id;
+	private String station_name;
+	
+	public BookmarkDTO(@NonNull String id) {
+		this.id = id;
+	}
+	
 	
 
 }
