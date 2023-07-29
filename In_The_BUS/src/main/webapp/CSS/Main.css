@@ -289,7 +289,7 @@ img#close1 {
 	right: 37.3%;
 }
 /* 로그인 버튼 */
-#Login {
+#Login,#LogOut {
 	/* 배경색과 글자색 지정 */
 	background-color: #3498db;
 	color: #fff;
@@ -307,7 +307,7 @@ img#close1 {
 	outline: none;
 }
 
-#Login:hover {
+#Login:hover,#LogOut:hover {
 	background-color: #45aaf2;
 }
 
