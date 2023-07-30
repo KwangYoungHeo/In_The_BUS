@@ -1,7 +1,8 @@
 
 $(document).ready(function() {
 	// document.getElementById('LogOut').setAttribute('hidden', true);
-
+	
+	
 	$("#routes").mouseenter(function() {
 		$(this).css('background-color', '#E6E6E6');
 	});
@@ -23,6 +24,13 @@ $(document).ready(function() {
 		jsonData = JSON.parse(decodeURIComponent(jsonData));
 		console.log(jsonData);
 		// 여기에서 jsonData를 원하는 방식으로 사용합니다.
+		
+		 window.onpageshow = function(event) {
+            if (event.persisted) {
+                location.reload();
+            }
+        };
+        
 		$.ajax({
 			url: "../LoginCon",
 			data: {
@@ -31,6 +39,7 @@ $(document).ready(function() {
 			dataType: "json",
 			success: function(result) {
 				if (result != null) {
+					ajaxCallBack = true;
 					bookmark(result);
 					member(result);
 				}
@@ -97,6 +106,7 @@ function kakaoLogin() {
 								document.cookie = "jsonData=" + encodeURIComponent(JSON.stringify(result) + "; max-age=" + (60 * 60 * 1000));
 								bookmark(result);
 								member(result);
+								location.reload();
 							} else {
 								$.ajax({
 									url: "../JoinCon",
@@ -115,6 +125,7 @@ function kakaoLogin() {
 											document.cookie = "jsonData=" + encodeURIComponent(JSON.stringify(result)) + "; max-age=" + (60 * 60 * 1000);
 											member(result);
 											bookmark(result);
+											location.reload();
 										}
 									},
 									/* 실패 시 */

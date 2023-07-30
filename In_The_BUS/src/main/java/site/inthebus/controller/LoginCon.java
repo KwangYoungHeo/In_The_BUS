@@ -29,7 +29,7 @@ public class LoginCon extends HttpServlet {
 		
 		Gson gson = new Gson();
 		String result = gson.toJson(info);
-		
+
 		if(info != null) {
 			response.getWriter().print(result);
 		}else {

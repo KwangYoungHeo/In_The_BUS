@@ -13,11 +13,7 @@ var map = new kakao.maps.Map(mapContainer, mapOption);
 // 장소 검색 객체를 생성합니다
 var ps = new kakao.maps.services.Places();
 
-
-
-
-
-// 키워드 검색 시스템 테스트
+// 키워드 검색 시스템
 let start = document.getElementById('Starting');
 let end = document.getElementById('Destingation');
 let searchShow = document.getElementById('searchShow')
@@ -34,27 +30,20 @@ let end_place_y = "";
 
 let start_place = (e) => {
 	if (e.key === "Enter") {
-
 		searchShowPar.setAttribute('hidden', true);
 		mapShow.removeAttribute('hidden');
-
 		let start_place = start.value;
 		// 키워드로 장소를 검색합니다
 		ps.keywordSearch(start_place, placesSearchCB);
-
 		// 키워드 검색 완료 시 호출되는 콜백함수 입니다
 		function placesSearchCB(data, status, pagination) {
 			if (status === kakao.maps.services.Status.OK) {
-
 				// console.log(data); 키워드 검색 결과가 담긴 변수
-
 				start_place_x = data[0].x;
 				start_place_y = data[0].y;
-
 				// 검색된 장소 위치를 기준으로 지도 범위를 재설정하기위해
 				// LatLngBounds 객체에 좌표를 추가합니다
 				var bounds = new kakao.maps.LatLngBounds();
-
 				for (var i = 0; i < data.length; i++) {
 					displayMarker(data[i]);
 					bounds.extend(new kakao.maps.LatLng(data[i].y, data[i].x));
@@ -63,22 +52,17 @@ let start_place = (e) => {
 				bounds.oa = Number(start_place_x);
 				bounds.pa = Number(start_place_y);
 				bounds.qa = Number(start_place_y);
-
 				// 검색된 장소 위치를 기준으로 지도 범위를 재설정합니다
 				map.setBounds(bounds);
 			}
 		}
-
 		// 지도에 마커를 표시하는 함수입니다
 		function displayMarker(place) {
-
 			// 마커를 생성하고 지도에 표시합니다
 			var marker = new kakao.maps.Marker({
 				map: map,
 				position: new kakao.maps.LatLng(place.y, place.x)
 			});
-
-
 
 			// 마커에 클릭이벤트를 등록합니다
 			kakao.maps.event.addListener(marker, 'click', function() {
@@ -163,35 +147,10 @@ let searchRoute = () => {
 			var resultObj = JSON.parse(xhr.responseText);
 			resultArr = resultObj["result"];
 			console.log(resultArr);
-			console.log(resultArr.path[0].info);
-			console.log("이용하는 버스는 " + resultArr.path[0].subPath[1].lane[0].busNo);
 			showRouteList(resultArr);
 		}
 	}
 }
-
-//            $.ajax({
-//            	url : "",
-//            	
-//            	dataType : "json",
-//           	
-//            	/* 성공 시 */
-//            	success : function(result){ 
-//    				if(resultArr==null){
-//    					alert("resultArr null")
-//   				}else{
-//    					alert("resultArr 값 존재")
-//    					
-//    				}
-//    			},
-//   			
-//   			/* 실패 시 */
-//   			error : function(e){
-//  				alert('실패');
-//				console.log(e);
-//      	}
-//    
-//       })
 
 function arvInfo_busSearch(busID, startStationId, count) {
 	let stationInfo_busSearch = "";
@@ -211,8 +170,6 @@ function arvInfo_busSearch(busID, startStationId, count) {
 			for (var i = 0; i < stationInfo_busSearch.response.body.items.item.length; i++) {
 				if (stationInfo_busSearch.response.body.items.item[i].routeid == busID) {
 					arrTime = stationInfo_busSearch.response.body.items.item[i].arrtime;
-
-
 				}
 			}
 			console.log(stationInfo_busSearch);
@@ -247,9 +204,6 @@ function showRouteList(resultArr) {
 			var url = "../web/BUS_Inside.jsp?start=" + bus_start + "&end=" + bus_end + "&busNo=" + busNo + "&payment=" + payment + "&totalTime=" + totalTime + "&busId=" + busID + "&StationId=" + startStationId + "&arsID=" + arsID
 			$('#firstShow').attr("href", url);			
 		}
-		// var userID = 
-		// window.location.assign("./BUS_Inside.jsp?start=" + bus_start + "&end=" + bus_end + "&busNo=" + busNo + "&payment=" + payment + "&totalTime=" + totalTime + "&busId=" + busID + "&StationId=" + startStationId);
-		// div 늘어나는 구문 작성
 		$('#searchShow').after("<a href='../web/BUS_Inside.jsp?start=" + bus_start + "&end=" + bus_end + "&busNo=" + busNo + "&payment=" + payment + "&totalTime=" + totalTime + "&busId=" + busID + "&StationId=" + startStationId+ "&arsID=" + arsID + "'><div class='searchShowChild'> <ul> <li>	<div class='titleclickArea'> <span class='time time" + j + "'>소요시간</span> <br> <span class='payment" + j + "'>요금 </span> <br> </div> <div class='firstVisible'> <div class='subwaystation'> <span class='name" + j + "' data-id='name'>출발 정류장</span><br> <span class='busNo" + j + "'>노선명</span> <span class='setmin setmin" + j + "'> 도착정보 </span><br> <span class='stationName" + j + "'>도착 정정류장</span> <br> </div> </div> </li> </ul> </div></a>");
 		$('.time' + (i + 1)).text('소요시간 : ' + totalTime + '분');
 		$('.payment' + (i + 1)).text('요금 : ' + payment + '원');
@@ -257,7 +211,6 @@ function showRouteList(resultArr) {
 		$('.busNo' + (i + 1)).text('ㅣ  ' + busNo + '번');
 		$('.stationName' + (i + 1)).text('도착지 : ' + bus_end);
 		arvInfo_busSearch(busID, startStationId, i);
-
 	}
 	searchShowPar.removeAttribute('hidden');
 	mapShow.setAttribute('hidden', true);

@@ -5,6 +5,7 @@ import java.util.List;
 
 public class BusNoCheck {
 	// 버스 노선 추가할 때 마다 case추가하고 전역 변수로 해당 노선의 정류장 리스트 생성할 것
+	// 추후 DB에 담을 것, 현재는 정보가 적으므로 이곳에 작성
 	// 매월 06번 기점 -> 종점
 	List<Integer> list_06forward = new ArrayList<>(
 			List.of(2109, 2100, 2155, 2261, 2023, 2032, 2022, 2254, 3179, 3185, 3184, 3104, 3091, 3189, 3195, 3138,
@@ -64,8 +65,6 @@ public class BusNoCheck {
 		int busNum = Integer.parseInt(slice.toString());
 
 		switch (busNum) {
-		// 버스 노선 추가할 때 마다 case추가하고 전역 변수로 해당 노선의 정류장 리스트 생성할 것
-		// 나머지 구문은 그대로 사용
 		case 06:
 			list_forward = list_06forward;
 			list_reverse = list_06reverse;
