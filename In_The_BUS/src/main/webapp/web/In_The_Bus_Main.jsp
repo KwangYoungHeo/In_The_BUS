@@ -54,9 +54,6 @@
 				<div id="blur-background"></div>
 				<hr>
 			</div>
-			<div id="favorites">
-				<h1 id="edit" onclick="">즐겨찾기 편집</h1>
-			</div>
 			<div id="regional">
 				<h1 id="settings" onclick="">지역설정</h1>
 			</div>
