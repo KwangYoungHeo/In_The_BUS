@@ -158,7 +158,7 @@ $(document).ready(function() {
 		
 	});
 
-	$("svg").click(function() {
+	$("#Layer_1").click(function() {
 		if ($('#star').attr('height') == '0%') {
 			// 즐겨찾기 추가
 			$.ajax({
