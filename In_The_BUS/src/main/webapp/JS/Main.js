@@ -1,6 +1,8 @@
+$('LogOut').on("click", logOut);
+
 
 $(document).ready(function() {
-	// document.getElementById('LogOut').setAttribute('hidden', true);
+	document.getElementById('LogOut').setAttribute('hidden', true);
 	
 	
 	$("#routes").mouseenter(function() {
@@ -23,14 +25,11 @@ $(document).ready(function() {
 	if (jsonData) {
 		jsonData = JSON.parse(decodeURIComponent(jsonData));
 		console.log(jsonData);
-		// 여기에서 jsonData를 원하는 방식으로 사용합니다.
-		
 		 window.onpageshow = function(event) {
             if (event.persisted) {
                 location.reload();
             }
         };
-        
 		$.ajax({
 			url: "../LoginCon",
 			data: {
@@ -39,7 +38,6 @@ $(document).ready(function() {
 			dataType: "json",
 			success: function(result) {
 				if (result != null) {
-					ajaxCallBack = true;
 					bookmark(result);
 					member(result);
 				}
@@ -188,7 +186,7 @@ function getCookieValue(cookieName) {
 function member(result) {
 	$('#Login').after("<div><h3 id='userId'><img id='userImg' src='" + result.profile_img + "'>" + result.id + "</h3></div>");
 	document.getElementById('Login').setAttribute('hidden', true);
-	// document.getElementById('LogOut').removeAttribute('hidden');
+	document.getElementById('LogOut').removeAttribute('hidden');
 }
 
 function logOut() {

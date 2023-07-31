@@ -55,7 +55,7 @@
 				<hr>
 			</div>
 			<div id="regional">
-				<h1 id="settings" onclick="">지역설정</h1>
+				<a href="./ReGion.jsp"><h1 id="settings">지역설정</h1></a>
 			</div>
 			<button id="LogOut" hidden>로그아웃</button>
 			<img src="../img/Close.png" alt="" id="close">

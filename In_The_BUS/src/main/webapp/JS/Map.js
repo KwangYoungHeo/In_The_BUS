@@ -19,10 +19,7 @@ let end = document.getElementById('Destingation');
 let searchShow = document.getElementById('searchShow')
 let searchShowPar = document.getElementById('searchShowPar');
 let mapShow = document.getElementById('map');
-
-
 let btn_route = "";
-
 let start_place_x = "";
 let start_place_y = "";
 let end_place_x = "";

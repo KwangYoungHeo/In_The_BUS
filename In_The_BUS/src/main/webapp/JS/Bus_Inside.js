@@ -144,9 +144,9 @@ $(document).ready(function() {
 		dataType: "text",
 		success: function(result) {
 			console.log(result);
-			if (result > 30) {
+			if (result > 35) {
 				$("#human").attr('fill', '#FF0000');
-			}else if (result > 20) {
+			}else if (result > 25) {
 				$("#human").attr('fill', '#f5cd00');
 			}else {
 				$("#human").attr('fill', '#80FF00');

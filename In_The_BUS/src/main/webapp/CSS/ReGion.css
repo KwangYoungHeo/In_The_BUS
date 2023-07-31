@@ -17,6 +17,7 @@ body {
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    background-color: #ededef;
   }
   /* 기본 스타일 설정 */
   .accordion {
@@ -28,8 +29,12 @@ body {
       outline: none;
       transition: 0.4s;
   }
-  .panel {
-      display: none;
-      background-color: white;
+  .GwangJu {
+      cursor: pointer;
       padding: 10px;
+      background-color: #7ed6df;;
+      border: none;
+      text-align: left;
+      outline: none;
+      transition: 0.4s;
   }
