@@ -1,10 +1,8 @@
-$('LogOut').on("click", logOut);
-
 
 $(document).ready(function() {
-	document.getElementById('LogOut').setAttribute('hidden', true);
-	
-	
+	// document.getElementById('LogOut').setAttribute('hidden', true);
+
+
 	$("#routes").mouseenter(function() {
 		$(this).css('background-color', '#E6E6E6');
 	});
@@ -21,15 +19,27 @@ $(document).ready(function() {
 		$(this).css('background-color', 'white');
 	});
 
+
+	$('#LogOut').on("click", function() {
+		var jsonData = getCookieValue("jsonData");
+		if (jsonData) {
+			jsonData = JSON.parse(decodeURIComponent(jsonData));
+			window.location.href = "../LogOutCon"
+		} else {
+			console.log("쿠키에 JSON 데이터가 저장되어 있지 않습니다.");
+		}
+	});
+
+
 	var jsonData = getCookieValue("jsonData");
 	if (jsonData) {
 		jsonData = JSON.parse(decodeURIComponent(jsonData));
 		console.log(jsonData);
-		 window.onpageshow = function(event) {
-            if (event.persisted) {
-                location.reload();
-            }
-        };
+		window.onpageshow = function(event) {
+			if (event.persisted) {
+				location.reload();
+			}
+		};
 		$.ajax({
 			url: "../LoginCon",
 			data: {
@@ -186,10 +196,6 @@ function getCookieValue(cookieName) {
 function member(result) {
 	$('#Login').after("<div><h3 id='userId'><img id='userImg' src='" + result.profile_img + "'>" + result.id + "</h3></div>");
 	document.getElementById('Login').setAttribute('hidden', true);
-	document.getElementById('LogOut').removeAttribute('hidden');
-}
-
-function logOut() {
-	document.cookie = "jsonData=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;";
+	// document.getElementById('LogOut').removeAttribute('hidden');
 }
 
