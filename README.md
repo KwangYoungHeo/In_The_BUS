@@ -1,6 +1,7 @@
 # RTM
 # 📎 In The BUS(팀명: RTM)
-![](https://velog.velcdn.com/images/sslgo15/post/6a373468-3247-409d-a054-bf4ed674239f/image.png)
+![](https://velog.velcdn.com/images/sslgo15/post/e914c372-fce4-4f80-aa8f-79b6ef8d3088/image.png)
+
 
 
 
@@ -131,17 +132,14 @@
   <tr>
     <td align="center"><img src="https://item.kakaocdn.net/do/9fc764ca0704ce3ebaba47c50f8b7e8ff43ad912ad8dd55b04db6a64cddaf76d" width="100" height="100"/></td>
     <td align="center"><img src="https://mblogthumb-phinf.pstatic.net/MjAxODAxMDdfMjk1/MDAxNTE1MzAzODc3NjE1.HqFU7w9BX14fzsPWXqTulN13TI584cLlazYu4Yuuohcg.vbUBogBP6YzkgsyGUS2tLGFNc-rSBG8NazX5oL_54k8g.GIF.jee6959/kakao7.gif?type=w800" width="100" height="100"/></td>
-    <td align="center"><img src="https://img.ppomppu.co.kr/zboard/data3/comment/88/freeboard_57277188" width="100" height="100"/></td>
   </tr>
   <tr>
     <td align="center"><strong>허광영</strong></td>
     <td align="center"><strong>문필현</strong></td>
-    <td align="center"><strong>김지희</strong></td>
   </tr>
   <tr>
     <td align="center"><b>PM,Back,Front,DB</b></td>
     <td align="center"><b>Frontend</b></td>
-    <td align="center"><b>DB</b></td>
   </tr>
   <tr>
     <td aling="center">
@@ -159,16 +157,9 @@
       	<li>프론트 페이지 구현
     </ol>
     </td>
-    <td aling="center">
-    <ol>
-      <li>날씨 · 날짜 데이터 크롤링
-      <li>DB구성, 데이터 가공
-    </ol>
-    </td>
   </tr>
   <tr>
     <td align="center"><a href="https://github.com/HeoGwangYoung" target='_blank'>github</a></td>
-    <td align="center"><a href="https://github.com/자신의username작성해주세요" target='_blank'>github</a></td>
     <td align="center"><a href="https://github.com/자신의username작성해주세요" target='_blank'>github</a></td>
   </tr>
 </table>
